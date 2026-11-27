@@ -1,4 +1,5 @@
 {
+  "split": "easy",
   "resume_id": "r6",
   "resume": "오세린 (가상 인물)\n\n[경력]\n클라우드 엔지니어 · 가상게임즈 · 2021.04–2025.04 (4년)\n- Terraform으로 AWS 인프라(VPC, ECS, RDS)를 코드로 관리했습니다.\n- GitHub Actions로 ECS 무중단 배포 파이프라인을 만들었습니다.\n- CloudWatch 경보와 대시보드로 서비스 모니터링 체계를 구축했습니다.\n\n[기술]\nAWS, Terraform, Docker, GitHub Actions, Linux, Bash\n\n[자격증]\nAWS Certified Solutions Architect – Associate",
   "jobs": [

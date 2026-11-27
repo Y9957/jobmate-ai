@@ -20,6 +20,19 @@ def test_case_ids_are_unique():
     assert len({c.case_id for c in CASES}) == len(CASES)
 
 
+def test_every_split_is_present_and_test_is_the_largest_hard_split():
+    by_split = Counter(c.split for c in CASES)
+    assert set(by_split) == {"easy", "dev", "test"}
+    assert by_split["test"] > by_split["dev"]
+
+
+def test_new_hard_tags_are_always_not_met():
+    for c in CASES:
+        for r in c.requirements:
+            if {"weak_mention", "negation", "level_short"} & set(r.tags):
+                assert r.gold == "not_met", f"{c.case_id} / {r.text}"
+
+
 @pytest.mark.parametrize("case", CASES, ids=lambda c: c.case_id)
 def test_every_evidence_line_is_really_in_the_resume(case):
     for r in case.requirements:

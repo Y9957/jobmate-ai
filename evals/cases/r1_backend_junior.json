@@ -1,4 +1,5 @@
 {
+  "split": "easy",
   "resume_id": "r1",
   "resume": "이서준 (가상 인물)\n\n[경력]\n백엔드 개발 인턴 · 가상커머스 · 2025.03–2025.08 (6개월)\n- FastAPI로 주문 조회 API를 개발하고 응답 시간을 30% 줄였습니다.\n- PostgreSQL 인덱스를 설계해 주문 검색 쿼리를 개선했습니다.\n- Docker Compose로 로컬 개발 환경을 구성했습니다.\n\n[프로젝트]\n스터디 매칭 서비스 (개인) · 2024.07–2024.10\n- Django REST Framework로 회원·스터디 API를 만들었습니다.\n- GitHub Actions로 테스트 자동화를 구성했습니다.\n\n[기술]\nPython, FastAPI, Django, PostgreSQL, Docker, Git\n\n[학력]\n가상대학교 컴퓨터공학과 학사 졸업 (2025.02)",
   "jobs": [

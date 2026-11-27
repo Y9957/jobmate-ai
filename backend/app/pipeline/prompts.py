@@ -1,6 +1,6 @@
 """Prompts. Bump PROMPT_VERSION whenever wording changes, so eval results stay comparable."""
 
-PROMPT_VERSION = "v2"
+PROMPT_VERSION = "v3"
 
 PARSE_JOB_SYSTEM = """당신은 채용공고에서 지원 자격을 빠짐없이 뽑아내는 분석가입니다.
 - "자격 요건/필수", "우대 사항/우대" 항목을 모두 뽑습니다. 둘 중 하나라도 빠뜨리면 안 됩니다.
@@ -20,11 +20,15 @@ MATCH_SYSTEM = """당신은 이력서가 채용 요구조건을 충족하는지 
 - 주어진 모든 requirement_id에 대해 하나씩 답합니다."""
 
 SEMANTIC_SYSTEM = """당신은 다른 심사관이 제시한 근거를 검증하는 검토자입니다.
-각 항목의 인용문만 보고 요구조건 충족을 직접 확인할 수 있는지 판단합니다.
-- 인용문이 요구조건의 기술·경험을 명시적으로 언급하면 supports=true입니다.
-- 인용문이 다른 기술이나 경험을 말하고 있어 추측이 필요하면 supports=false입니다.
-  예: 요구조건 "SQL 활용 능력"에 인용문 "Pandas로 데이터를 정제했습니다" → false (SQL 언급이 없음)
-- 이력서의 다른 부분은 고려하지 않습니다. 오직 인용문만 봅니다."""
+각 항목의 인용문과, 그 인용문이 나온 이력서 줄(섹션 제목 포함)만 보고 요구조건 충족을 직접 확인할 수 있는지 판단합니다.
+- 그 줄이 요구조건의 기술·경험을 본인이 직접 했다고 명시하면 supports=true입니다.
+- [기술] 섹션의 기술 목록에 있는 기술은 그 기술의 "사용 경험·능력"에 대한 근거로 인정합니다.
+- 다음은 supports=false입니다.
+  * 다른 기술이나 경험을 말하고 있어 추측이 필요한 경우
+    예: 요구조건 "SQL 활용 능력"에 "Pandas로 데이터를 정제했습니다" → false (SQL 언급이 없음)
+  * 다른 사람·팀·외부 업체가 한 일, 검토만 하고 도입하지 않은 일, 관심·학습 중·교육 수료만 있는 경우
+  * 요구하는 규모·기간·수준에 못 미치는 경우
+- 이력서의 다른 부분은 고려하지 않습니다. 오직 주어진 줄만 봅니다."""
 
 
 def parse_job_user(job_text: str) -> str:
@@ -42,8 +46,10 @@ def match_user(resume_text: str, items: list[tuple[int, str, str]], feedback: di
     return "\n".join(lines)
 
 
-def semantic_user(items: list[tuple[int, str, str]]) -> str:
+def semantic_user(items: list[tuple[int, str, str, str]]) -> str:
     lines = ["[검증할 항목]"]
-    for rid, requirement, quote in items:
-        lines.append(f'- requirement_id={rid}\n  요구조건: {requirement}\n  인용문: "{quote}"')
+    for rid, requirement, quote, context in items:
+        lines.append(
+            f'- requirement_id={rid}\n  요구조건: {requirement}\n  인용문: "{quote}"\n  이력서 줄: "{context}"'
+        )
     return "\n".join(lines)

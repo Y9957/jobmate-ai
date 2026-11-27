@@ -1,4 +1,5 @@
 {
+  "split": "easy",
   "resume_id": "r5",
   "resume": "한도윤 (가상 인물)\n\n[경력]\n백엔드 개발자 · 가상물류 · 2023.07–2025.07 (2년)\n- Spring Boot와 JPA로 배송 추적 API를 개발했습니다.\n- Redis 캐시를 도입해 조회 API 응답 시간을 절반으로 줄였습니다.\n- MySQL 슬로우 쿼리를 분석해 인덱스를 추가했습니다.\n\n[기술]\nJava, Spring Boot, JPA, MySQL, Redis, Git\n\n[학력]\n가상대학교 소프트웨어학과 학사 졸업 (2023.02)",
   "jobs": [

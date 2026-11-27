@@ -1,0 +1,26 @@
+{
+  "split": "dev",
+  "resume_id": "h3",
+  "resume": "강태오 (가상 인물)\n\n[경력]\n가상헬스 · Android 개발자 · 2023.02–2025.07 (2년 5개월)\n- Kotlin과 Jetpack Compose로 건강 기록 앱 화면을 새로 만들었습니다.\n- 앱 크래시율을 Firebase Crashlytics로 추적해 0.8%에서 0.2%로 낮췄습니다.\n- iOS 개발자와 API 명세를 맞추며 기능 출시 일정을 조율했습니다.\n\n[프로젝트]\n걸음 수 챌린지 앱 (개인) · 2022.08–2022.11\n- Java로 만든 기존 앱을 Kotlin으로 옮겼습니다.\n- Google Play에 출시해 다운로드 1,000회를 달성했습니다.\n\n[기술]\nKotlin, Java, Jetpack Compose, Coroutines, Firebase, Git\n\n[학력]\n가상대학교 정보통신공학과 학사 졸업 (2023.02)",
+  "jobs": [
+    {
+      "case_id": "h3",
+      "title": "Android 개발자 (경력)",
+      "requirements": [
+        {"text": "Kotlin 기반 Android 앱 개발 경험", "type": "required", "gold": "met", "tags": ["direct"],
+         "evidence": ["Kotlin과 Jetpack Compose로 건강 기록 앱 화면을 새로 만들었습니다."]},
+        {"text": "Jetpack Compose 사용 경험", "type": "required", "gold": "met", "tags": ["direct"],
+         "evidence": ["Kotlin과 Jetpack Compose로 건강 기록 앱 화면을 새로 만들었습니다.", "Kotlin, Java, Jetpack Compose, Coroutines, Firebase, Git"]},
+        {"text": "Swift를 이용한 iOS 앱 개발 경험", "type": "preferred", "gold": "not_met", "tags": ["tempting_quote"], "evidence": []},
+        {"text": "앱 품질 지표 개선 경험", "type": "preferred", "gold": "met", "tags": ["paraphrase"],
+         "evidence": ["앱 크래시율을 Firebase Crashlytics로 추적해 0.8%에서 0.2%로 낮췄습니다."]},
+        {"text": "앱 마켓 출시 경험", "type": "preferred", "gold": "met", "tags": ["paraphrase"],
+         "evidence": ["Google Play에 출시해 다운로드 1,000회를 달성했습니다."]},
+        {"text": "Flutter 사용 경험", "type": "preferred", "gold": "not_met", "tags": ["absent"], "evidence": []},
+        {"text": "Android 개발 경력 3년 이상", "type": "constraint", "gold": "not_met", "tags": ["years"], "evidence": []},
+        {"text": "레거시 코드 마이그레이션 경험", "type": "preferred", "gold": "met", "tags": ["paraphrase"],
+         "evidence": ["Java로 만든 기존 앱을 Kotlin으로 옮겼습니다."]}
+      ]
+    }
+  ]
+}

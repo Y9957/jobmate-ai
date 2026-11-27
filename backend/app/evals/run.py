@@ -97,9 +97,9 @@ def pct(x: float) -> str:
     return f"{x * 100:.1f}%"
 
 
-def to_markdown(model: str, n_cases: int, results: list[SystemResult]) -> str:
+def to_markdown(model: str, split: str, n_cases: int, results: list[SystemResult]) -> str:
     head = (
-        f"모델 `{model}` · 프롬프트 `{prompts.PROMPT_VERSION}` · 케이스 {n_cases}개 · "
+        f"데이터 `{split}` · 모델 `{model}` · 프롬프트 `{prompts.PROMPT_VERSION}` · 케이스 {n_cases}개 · "
         f"요구조건 {results[0].summary.items}개\n\n"
         "| 시스템 | 근거 없는 충족 판정 ↓ | 지어낸 인용 ↓ | 잘못된 충족(오탐) ↓ "
         "| 충족 재현율 ↑ | 판정 정확도 ↑ | LLM 호출 | 시간 |\n"
@@ -130,12 +130,13 @@ def to_markdown(model: str, n_cases: int, results: list[SystemResult]) -> str:
 def main() -> int:
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--systems", default="baseline,span,full")
+    p.add_argument("--split", choices=["easy", "dev", "test"], required=True)
     p.add_argument("--limit", type=int, default=0, help="only the first N cases (smoke run)")
     a = p.parse_args()
 
     settings = get_settings()
     llm = get_llm(settings)
-    cases = load_cases()
+    cases = load_cases((a.split,))
     if a.limit:
         cases = cases[: a.limit]
 
@@ -144,15 +145,16 @@ def main() -> int:
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
     stamp = datetime.now().strftime("%Y%m%d_%H%M")
     slug = llm.name.replace(":", "-").replace("/", "-")
-    base = RESULTS_DIR / f"{stamp}_{slug}_{prompts.PROMPT_VERSION}"
+    base = RESULTS_DIR / f"{stamp}_{a.split}_{slug}_{prompts.PROMPT_VERSION}"
     payload = {
+        "split": a.split,
         "model": llm.name,
         "prompt_version": prompts.PROMPT_VERSION,
         "cases": len(cases),
         "results": [r.model_dump() for r in results],
     }
     base.with_suffix(".json").write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
-    md = to_markdown(llm.name, len(cases), results)
+    md = to_markdown(llm.name, a.split, len(cases), results)
     base.with_suffix(".md").write_text(md, encoding="utf-8")
     print(md)
     print(f"saved: {base.with_suffix('.json')}", file=sys.stderr)

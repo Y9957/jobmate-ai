@@ -1,0 +1,1675 @@
+{
+  "split": "test",
+  "model": "ollama:qwen3:8b",
+  "prompt_version": "v3",
+  "cases": 5,
+  "results": [
+    {
+      "system": "baseline",
+      "label": "A. 검증 없음 (단일 매칭 결과를 그대로 신뢰)",
+      "summary": {
+        "items": 40,
+        "predicted_met": 23,
+        "unsupported_met_rate": 0.087,
+        "fabricated_quote_rate": 0.0,
+        "false_met_rate": 0.1176,
+        "met_recall": 0.913,
+        "verdict_accuracy": 0.9,
+        "false_met_by_tag": {
+          "absent": "0/4",
+          "adjacent_trap": "0/1",
+          "degree": "0/1",
+          "level_short": "0/2",
+          "negation": "0/1",
+          "tempting_quote": "1/2",
+          "weak_mention": "0/6",
+          "years": "2/2"
+        },
+        "outcomes": {
+          "correct_met": 21,
+          "correct_not": 15,
+          "missed_met": 2,
+          "false_met": 2
+        }
+      },
+      "llm_calls": 5,
+      "seconds": 52.2,
+      "items": [
+        {
+          "case_id": "t1",
+          "requirement": "React 계열 프론트엔드 개발 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Next.js와 TypeScript로 강의 수강 웹을 개발했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t1",
+          "requirement": "Python 웹 API 개발 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Python FastAPI로 수강 신청 API를 만들고 PostgreSQL 스키마를 설계했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t1",
+          "requirement": "데이터베이스 스키마 설계 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Python FastAPI로 수강 신청 API를 만들고 PostgreSQL 스키마를 설계했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t1",
+          "requirement": "결제 시스템(PG) 연동 경험",
+          "tags": [
+            "weak_mention"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "t1",
+          "requirement": "서버리스 환경 배포 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Vercel과 AWS Lambda로 서비스를 배포했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t1",
+          "requirement": "Rust 사용 경험",
+          "tags": [
+            "weak_mention"
+          ],
+          "gold": "not_met",
+          "verdict": "insufficient",
+          "quote": "학습 중인 기술로 Rust를 언급하고 있습니다.",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "t1",
+          "requirement": "컴퓨터공학 관련 전공",
+          "tags": [
+            "degree"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "t1",
+          "requirement": "월 활성 사용자 10만 명 이상 서비스 운영 경험",
+          "tags": [
+            "level_short"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "t2",
+          "requirement": "Linux 서버 운영 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "온프레미스 Linux 서버 200여 대의 패치와 계정 관리를 담당했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t2",
+          "requirement": "설정 관리 자동화 도구(Ansible 등) 사용 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Ansible 플레이북으로 서버 설정 배포를 자동화했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t2",
+          "requirement": "AWS 운영 경험",
+          "tags": [
+            "weak_mention",
+            "tempting_quote"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "t2",
+          "requirement": "모니터링 도구 사용 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "insufficient",
+          "quote": "Zabbix",
+          "quote_exists": true,
+          "outcome": "missed_met",
+          "notes": []
+        },
+        {
+          "case_id": "t2",
+          "requirement": "보안 취약점 진단 수행 경험",
+          "tags": [
+            "weak_mention"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "t2",
+          "requirement": "인프라 경력 5년 이상",
+          "tags": [
+            "years"
+          ],
+          "gold": "not_met",
+          "verdict": "met",
+          "quote": "가상은행 · 인프라 엔지니어 · 2020.03–2025.02 (4년 11개월)",
+          "quote_exists": true,
+          "outcome": "false_met",
+          "notes": []
+        },
+        {
+          "case_id": "t2",
+          "requirement": "정보처리기사 자격증",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "정보처리기사",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t2",
+          "requirement": "Terraform 사용 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "t3",
+          "requirement": "워크플로 오케스트레이션 도구 운영 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Airflow DAG로 일 300GB 로그 적재 파이프라인을 운영했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t3",
+          "requirement": "Spark 등 대용량 데이터 처리 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Spark로 이벤트 로그를 정제해 Hive 테이블로 적재했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t3",
+          "requirement": "Kafka 기반 스트리밍 파이프라인 경험",
+          "tags": [
+            "negation"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "Kafka Connect를 검토했지만 비용 문제로 도입하지 않았습니다.",
+          "quote_exists": true,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "t3",
+          "requirement": "dbt 사용 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "dbt로 마트 테이블 모델을 관리하고 테스트를 추가했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t3",
+          "requirement": "일 1TB 이상 데이터 처리 경험",
+          "tags": [
+            "level_short"
+          ],
+          "gold": "not_met",
+          "verdict": "insufficient",
+          "quote": "Airflow DAG로 일 300GB 로그 적재 파이프라인을 운영했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "t3",
+          "requirement": "데이터 엔지니어링 경력 3년 이상",
+          "tags": [
+            "years"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "가상물산 · 데이터 엔지니어 · 2021.07–2025.06 (4년)",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t3",
+          "requirement": "Flink 등 실시간 스트림 처리 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "t3",
+          "requirement": "SQL 활용 능력",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "SQL, Airflow, Spark, Hive, dbt, AWS S3",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t4",
+          "requirement": "LLM API를 활용한 애플리케이션 개발 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "OpenAI API와 LangChain으로 직무별 면접 질문을 생성하는 웹 앱을 만들었습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t4",
+          "requirement": "Python 프로그래밍 능력",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Python, SQL, LangChain, Streamlit",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t4",
+          "requirement": "프롬프트 엔지니어링 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "insufficient",
+          "quote": "팀에서 프롬프트 설계와 결과 평가 기준 수립을 맡았습니다.",
+          "quote_exists": true,
+          "outcome": "missed_met",
+          "notes": []
+        },
+        {
+          "case_id": "t4",
+          "requirement": "추천 시스템 모델 개발 경험",
+          "tags": [
+            "weak_mention"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "t4",
+          "requirement": "소프트웨어 개발 실무 경력 2년 이상",
+          "tags": [
+            "years",
+            "tempting_quote"
+          ],
+          "gold": "not_met",
+          "verdict": "met",
+          "quote": "가상미디어 · 서비스 기획자 · 2021.03–2024.02 (3년)",
+          "quote_exists": true,
+          "outcome": "false_met",
+          "notes": []
+        },
+        {
+          "case_id": "t4",
+          "requirement": "LangChain 사용 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Python, SQL, LangChain, Streamlit",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t4",
+          "requirement": "PyTorch 사용 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "t4",
+          "requirement": "SQL 활용 능력",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "SQL로 사용자 행동 데이터를 조회해 기획 근거로 활용했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t5",
+          "requirement": "테스트 자동화 프레임워크 사용 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Selenium과 pytest로 웹 결제 화면 회귀 테스트를 자동화했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t5",
+          "requirement": "CI 환경에서 테스트 실행 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Jenkins에서 야간 테스트를 돌리고 실패 리포트를 Slack으로 보냈습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t5",
+          "requirement": "성능·부하 테스트 수행 경험",
+          "tags": [
+            "weak_mention"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "성능 테스트는 외부 업체에 맡겼고, 저는 결과 보고서를 정리했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "t5",
+          "requirement": "Playwright 사용 경험",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "t5",
+          "requirement": "API 테스트 도구 사용 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Postman",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t5",
+          "requirement": "소프트웨어 테스팅 자격증 보유",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "ISTQB CTFL",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t5",
+          "requirement": "QA 경력 3년 이상",
+          "tags": [
+            "years"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "가상게임즈 · QA 엔지니어 · 2022.04–2025.05 (3년 1개월)",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t5",
+          "requirement": "모바일 앱 테스트 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        }
+      ]
+    },
+    {
+      "system": "span",
+      "label": "B. 원문 대조 + 재시도",
+      "summary": {
+        "items": 40,
+        "predicted_met": 19,
+        "unsupported_met_rate": 0.1053,
+        "fabricated_quote_rate": 0.0,
+        "false_met_rate": 0.1176,
+        "met_recall": 0.7391,
+        "verdict_accuracy": 0.8,
+        "false_met_by_tag": {
+          "absent": "0/4",
+          "adjacent_trap": "0/1",
+          "degree": "0/1",
+          "level_short": "0/2",
+          "negation": "0/1",
+          "tempting_quote": "1/2",
+          "weak_mention": "0/6",
+          "years": "2/2"
+        },
+        "outcomes": {
+          "correct_met": 17,
+          "correct_not": 15,
+          "missed_met": 6,
+          "false_met": 2
+        }
+      },
+      "llm_calls": 7,
+      "seconds": 56.0,
+      "items": [
+        {
+          "case_id": "t1",
+          "requirement": "React 계열 프론트엔드 개발 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Next.js와 TypeScript로 강의 수강 웹을 개발했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t1",
+          "requirement": "Python 웹 API 개발 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Python FastAPI로 수강 신청 API를 만들고 PostgreSQL 스키마를 설계했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t1",
+          "requirement": "데이터베이스 스키마 설계 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Python FastAPI로 수강 신청 API를 만들고 PostgreSQL 스키마를 설계했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t1",
+          "requirement": "결제 시스템(PG) 연동 경험",
+          "tags": [
+            "weak_mention"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "t1",
+          "requirement": "서버리스 환경 배포 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Vercel과 AWS Lambda로 서비스를 배포했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t1",
+          "requirement": "Rust 사용 경험",
+          "tags": [
+            "weak_mention"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "t1",
+          "requirement": "컴퓨터공학 관련 전공",
+          "tags": [
+            "degree"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "t1",
+          "requirement": "월 활성 사용자 10만 명 이상 서비스 운영 경험",
+          "tags": [
+            "level_short"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "t2",
+          "requirement": "Linux 서버 운영 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "온프레미스 Linux 서버 200여 대의 패치와 계정 관리를 담당했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t2",
+          "requirement": "설정 관리 자동화 도구(Ansible 등) 사용 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Ansible 플레이북으로 서버 설정 배포를 자동화했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t2",
+          "requirement": "AWS 운영 경험",
+          "tags": [
+            "weak_mention",
+            "tempting_quote"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "t2",
+          "requirement": "모니터링 도구 사용 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "insufficient",
+          "quote": "Zabbix",
+          "quote_exists": true,
+          "outcome": "missed_met",
+          "notes": []
+        },
+        {
+          "case_id": "t2",
+          "requirement": "보안 취약점 진단 수행 경험",
+          "tags": [
+            "weak_mention"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "t2",
+          "requirement": "인프라 경력 5년 이상",
+          "tags": [
+            "years"
+          ],
+          "gold": "not_met",
+          "verdict": "met",
+          "quote": "가상은행 · 인프라 엔지니어 · 2020.03–2025.02 (4년 11개월)",
+          "quote_exists": true,
+          "outcome": "false_met",
+          "notes": []
+        },
+        {
+          "case_id": "t2",
+          "requirement": "정보처리기사 자격증",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "정보처리기사",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t2",
+          "requirement": "Terraform 사용 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "t3",
+          "requirement": "워크플로 오케스트레이션 도구 운영 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Airflow DAG로 일 300GB 로그 적재 파이프라인을 운영했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t3",
+          "requirement": "Spark 등 대용량 데이터 처리 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Spark로 이벤트 로그를 정제해 Hive 테이블로 적재했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t3",
+          "requirement": "Kafka 기반 스트리밍 파이프라인 경험",
+          "tags": [
+            "negation"
+          ],
+          "gold": "not_met",
+          "verdict": "insufficient",
+          "quote": "Kafka Connect를 검토했지만 비용 문제로 도입하지 않았습니다.",
+          "quote_exists": true,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "t3",
+          "requirement": "dbt 사용 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "dbt로 마트 테이블 모델을 관리하고 테스트를 추가했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t3",
+          "requirement": "일 1TB 이상 데이터 처리 경험",
+          "tags": [
+            "level_short"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "t3",
+          "requirement": "데이터 엔지니어링 경력 3년 이상",
+          "tags": [
+            "years"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "가상물산 · 데이터 엔지니어 · 2021.07–2025.06 (4년)",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t3",
+          "requirement": "Flink 등 실시간 스트림 처리 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "t3",
+          "requirement": "SQL 활용 능력",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "SQL, Airflow, Spark, Hive, dbt, AWS S3",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t4",
+          "requirement": "LLM API를 활용한 애플리케이션 개발 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "missed_met",
+          "notes": []
+        },
+        {
+          "case_id": "t4",
+          "requirement": "Python 프로그래밍 능력",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "missed_met",
+          "notes": []
+        },
+        {
+          "case_id": "t4",
+          "requirement": "프롬프트 엔지니어링 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "missed_met",
+          "notes": []
+        },
+        {
+          "case_id": "t4",
+          "requirement": "추천 시스템 모델 개발 경험",
+          "tags": [
+            "weak_mention"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "t4",
+          "requirement": "소프트웨어 개발 실무 경력 2년 이상",
+          "tags": [
+            "years",
+            "tempting_quote"
+          ],
+          "gold": "not_met",
+          "verdict": "met",
+          "quote": "가상미디어 · 서비스 기획자 · 2021.03–2024.02 (3년)",
+          "quote_exists": true,
+          "outcome": "false_met",
+          "notes": []
+        },
+        {
+          "case_id": "t4",
+          "requirement": "LangChain 사용 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "missed_met",
+          "notes": []
+        },
+        {
+          "case_id": "t4",
+          "requirement": "PyTorch 사용 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "insufficient",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "t4",
+          "requirement": "SQL 활용 능력",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "missed_met",
+          "notes": []
+        },
+        {
+          "case_id": "t5",
+          "requirement": "테스트 자동화 프레임워크 사용 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Selenium과 pytest로 웹 결제 화면 회귀 테스트를 자동화했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t5",
+          "requirement": "CI 환경에서 테스트 실행 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Jenkins에서 야간 테스트를 돌리고 실패 리포트를 Slack으로 보냈습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t5",
+          "requirement": "성능·부하 테스트 수행 경험",
+          "tags": [
+            "weak_mention"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "성능 테스트는 외부 업체에 맡겼고, 저는 결과 보고서를 정리했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "t5",
+          "requirement": "Playwright 사용 경험",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "t5",
+          "requirement": "API 테스트 도구 사용 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Postman",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t5",
+          "requirement": "소프트웨어 테스팅 자격증 보유",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "ISTQB CTFL",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t5",
+          "requirement": "QA 경력 3년 이상",
+          "tags": [
+            "years"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "가상게임즈 · QA 엔지니어 · 2022.04–2025.05 (3년 1개월)",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t5",
+          "requirement": "모바일 앱 테스트 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        }
+      ]
+    },
+    {
+      "system": "full",
+      "label": "C. 원문 대조 + 재시도 + 의미 검증",
+      "summary": {
+        "items": 40,
+        "predicted_met": 18,
+        "unsupported_met_rate": 0.0556,
+        "fabricated_quote_rate": 0.0,
+        "false_met_rate": 0.0588,
+        "met_recall": 0.7391,
+        "verdict_accuracy": 0.825,
+        "false_met_by_tag": {
+          "absent": "0/4",
+          "adjacent_trap": "0/1",
+          "degree": "0/1",
+          "level_short": "0/2",
+          "negation": "0/1",
+          "tempting_quote": "0/2",
+          "weak_mention": "0/6",
+          "years": "1/2"
+        },
+        "outcomes": {
+          "correct_met": 17,
+          "correct_not": 16,
+          "missed_met": 6,
+          "false_met": 1
+        }
+      },
+      "llm_calls": 12,
+      "seconds": 79.0,
+      "items": [
+        {
+          "case_id": "t1",
+          "requirement": "React 계열 프론트엔드 개발 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Next.js와 TypeScript로 강의 수강 웹을 개발했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t1",
+          "requirement": "Python 웹 API 개발 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Python FastAPI로 수강 신청 API를 만들고 PostgreSQL 스키마를 설계했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t1",
+          "requirement": "데이터베이스 스키마 설계 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Python FastAPI로 수강 신청 API를 만들고 PostgreSQL 스키마를 설계했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t1",
+          "requirement": "결제 시스템(PG) 연동 경험",
+          "tags": [
+            "weak_mention"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "t1",
+          "requirement": "서버리스 환경 배포 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Vercel과 AWS Lambda로 서비스를 배포했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t1",
+          "requirement": "Rust 사용 경험",
+          "tags": [
+            "weak_mention"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "t1",
+          "requirement": "컴퓨터공학 관련 전공",
+          "tags": [
+            "degree"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "t1",
+          "requirement": "월 활성 사용자 10만 명 이상 서비스 운영 경험",
+          "tags": [
+            "level_short"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "t2",
+          "requirement": "Linux 서버 운영 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "온프레미스 Linux 서버 200여 대의 패치와 계정 관리를 담당했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t2",
+          "requirement": "설정 관리 자동화 도구(Ansible 등) 사용 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Ansible 플레이북으로 서버 설정 배포를 자동화했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t2",
+          "requirement": "AWS 운영 경험",
+          "tags": [
+            "weak_mention",
+            "tempting_quote"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "t2",
+          "requirement": "모니터링 도구 사용 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "insufficient",
+          "quote": "Zabbix",
+          "quote_exists": true,
+          "outcome": "missed_met",
+          "notes": []
+        },
+        {
+          "case_id": "t2",
+          "requirement": "보안 취약점 진단 수행 경험",
+          "tags": [
+            "weak_mention"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "t2",
+          "requirement": "인프라 경력 5년 이상",
+          "tags": [
+            "years"
+          ],
+          "gold": "not_met",
+          "verdict": "met",
+          "quote": "가상은행 · 인프라 엔지니어 · 2020.03–2025.02 (4년 11개월)",
+          "quote_exists": true,
+          "outcome": "false_met",
+          "notes": []
+        },
+        {
+          "case_id": "t2",
+          "requirement": "정보처리기사 자격증",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "정보처리기사",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t2",
+          "requirement": "Terraform 사용 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "t3",
+          "requirement": "워크플로 오케스트레이션 도구 운영 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Airflow DAG로 일 300GB 로그 적재 파이프라인을 운영했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t3",
+          "requirement": "Spark 등 대용량 데이터 처리 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Spark로 이벤트 로그를 정제해 Hive 테이블로 적재했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t3",
+          "requirement": "Kafka 기반 스트리밍 파이프라인 경험",
+          "tags": [
+            "negation"
+          ],
+          "gold": "not_met",
+          "verdict": "insufficient",
+          "quote": "Kafka Connect를 검토했지만 비용 문제로 도입하지 않았습니다.",
+          "quote_exists": true,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "t3",
+          "requirement": "dbt 사용 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "dbt로 마트 테이블 모델을 관리하고 테스트를 추가했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t3",
+          "requirement": "일 1TB 이상 데이터 처리 경험",
+          "tags": [
+            "level_short"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "t3",
+          "requirement": "데이터 엔지니어링 경력 3년 이상",
+          "tags": [
+            "years"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "가상물산 · 데이터 엔지니어 · 2021.07–2025.06 (4년)",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t3",
+          "requirement": "Flink 등 실시간 스트림 처리 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "t3",
+          "requirement": "SQL 활용 능력",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "SQL, Airflow, Spark, Hive, dbt, AWS S3",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t4",
+          "requirement": "LLM API를 활용한 애플리케이션 개발 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "missed_met",
+          "notes": []
+        },
+        {
+          "case_id": "t4",
+          "requirement": "Python 프로그래밍 능력",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "missed_met",
+          "notes": []
+        },
+        {
+          "case_id": "t4",
+          "requirement": "프롬프트 엔지니어링 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "missed_met",
+          "notes": []
+        },
+        {
+          "case_id": "t4",
+          "requirement": "추천 시스템 모델 개발 경험",
+          "tags": [
+            "weak_mention"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "t4",
+          "requirement": "소프트웨어 개발 실무 경력 2년 이상",
+          "tags": [
+            "years",
+            "tempting_quote"
+          ],
+          "gold": "not_met",
+          "verdict": "insufficient",
+          "quote": "가상미디어 · 서비스 기획자 · 2021.03–2024.02 (3년)",
+          "quote_exists": true,
+          "outcome": "correct_not",
+          "notes": [
+            "의미 검증 실패로 충족 → 근거 부족: 인용문은 '가상미디어 · 서비스 기획자'라는 직무를 수행했음을 나타내지만, '소프트웨어 개발 실무 경력'이라는 요구조건을 충족하지 않습니다. 기획자 역할은 소프트웨어 개발 실무와는 다른 분야로 간주됩니다."
+          ]
+        },
+        {
+          "case_id": "t4",
+          "requirement": "LangChain 사용 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "missed_met",
+          "notes": []
+        },
+        {
+          "case_id": "t4",
+          "requirement": "PyTorch 사용 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "insufficient",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "t4",
+          "requirement": "SQL 활용 능력",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "missed_met",
+          "notes": []
+        },
+        {
+          "case_id": "t5",
+          "requirement": "테스트 자동화 프레임워크 사용 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Selenium과 pytest로 웹 결제 화면 회귀 테스트를 자동화했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t5",
+          "requirement": "CI 환경에서 테스트 실행 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Jenkins에서 야간 테스트를 돌리고 실패 리포트를 Slack으로 보냈습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t5",
+          "requirement": "성능·부하 테스트 수행 경험",
+          "tags": [
+            "weak_mention"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "성능 테스트는 외부 업체에 맡겼고, 저는 결과 보고서를 정리했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "t5",
+          "requirement": "Playwright 사용 경험",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "t5",
+          "requirement": "API 테스트 도구 사용 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Postman",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t5",
+          "requirement": "소프트웨어 테스팅 자격증 보유",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "ISTQB CTFL",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t5",
+          "requirement": "QA 경력 3년 이상",
+          "tags": [
+            "years"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "가상게임즈 · QA 엔지니어 · 2022.04–2025.05 (3년 1개월)",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "t5",
+          "requirement": "모바일 앱 테스트 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        }
+      ]
+    }
+  ]
+}

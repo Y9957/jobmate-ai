@@ -1,0 +1,27 @@
+{
+  "split": "dev",
+  "resume_id": "h2",
+  "resume": "서유나 (가상 인물)\n\n[요약]\n추천·수요 예측 모델을 만들어 온 데이터 사이언티스트입니다.\n\n[경력]\n가상마켓 · 데이터 사이언티스트 · 2022.01–2025.06 (3년 6개월)\n- LightGBM으로 상품 수요 예측 모델을 만들어 재고 폐기율을 12% 줄였습니다.\n- BigQuery에서 주문 로그를 집계하는 SQL 파이프라인을 작성했습니다.\n- 추천 모델의 온라인 A/B 테스트를 설계하고 결과를 경영진에 보고했습니다.\n- Spark 클러스터는 데이터 엔지니어링 팀이 운영했고, 저는 결과 테이블을 받아 분석했습니다.\n\n[프로젝트]\n리뷰 감성 분석 (사내 해커톤) · 2023.10\n- Hugging Face의 사전학습 BERT 모델을 미세조정해 리뷰를 긍정·부정으로 분류했습니다.\n\n[교육]\n- 딥러닝 부트캠프 수료 (2021.09–2021.12, PyTorch 실습 과정)\n\n[기술]\nPython, SQL, LightGBM, scikit-learn, BigQuery, Tableau\n\n[학력]\n가상대학교 응용통계학과 석사 졸업 (2021.08)",
+  "jobs": [
+    {
+      "case_id": "h2",
+      "title": "데이터 사이언티스트 (수요 예측)",
+      "requirements": [
+        {"text": "수요 예측 모델링 경험", "type": "required", "gold": "met", "tags": ["direct"],
+         "evidence": ["LightGBM으로 상품 수요 예측 모델을 만들어 재고 폐기율을 12% 줄였습니다."]},
+        {"text": "SQL 기반 데이터 집계 능력", "type": "required", "gold": "met", "tags": ["direct"],
+         "evidence": ["BigQuery에서 주문 로그를 집계하는 SQL 파이프라인을 작성했습니다.", "Python, SQL, LightGBM, scikit-learn, BigQuery, Tableau"]},
+        {"text": "Spark 등 분산 처리 프레임워크 사용 경험", "type": "required", "gold": "not_met", "tags": ["weak_mention"], "evidence": []},
+        {"text": "자연어 처리(NLP) 모델 개발 경험", "type": "preferred", "gold": "met", "tags": ["paraphrase"],
+         "evidence": ["Hugging Face의 사전학습 BERT 모델을 미세조정해 리뷰를 긍정·부정으로 분류했습니다."]},
+        {"text": "PyTorch 실무 사용 경험", "type": "preferred", "gold": "not_met", "tags": ["weak_mention"], "evidence": []},
+        {"text": "통계 또는 컴퓨터 관련 석사 이상", "type": "constraint", "gold": "met", "tags": ["degree"],
+         "evidence": ["가상대학교 응용통계학과 석사 졸업 (2021.08)"]},
+        {"text": "온라인 실험(A/B 테스트) 설계 경험", "type": "preferred", "gold": "met", "tags": ["direct"],
+         "evidence": ["추천 모델의 온라인 A/B 테스트를 설계하고 결과를 경영진에 보고했습니다."]},
+        {"text": "GCP 데이터 서비스 사용 경험", "type": "preferred", "gold": "met", "tags": ["paraphrase"],
+         "evidence": ["BigQuery에서 주문 로그를 집계하는 SQL 파이프라인을 작성했습니다.", "Python, SQL, LightGBM, scikit-learn, BigQuery, Tableau"]}
+      ]
+    }
+  ]
+}

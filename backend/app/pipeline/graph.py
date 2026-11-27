@@ -34,7 +34,7 @@ from app.pipeline.schemas import (
     MatchBatch,
     SemanticBatch,
 )
-from app.pipeline.span import quote_in_source
+from app.pipeline.span import quote_in_source, source_context
 
 
 class State(TypedDict, total=False):
@@ -186,7 +186,17 @@ def build_graph(llm: LLMClient, max_attempts: int = 3, verify_span: bool = True,
             return {"trace": log(state, "semantic_check: nothing to check")}
         batch = llm.structured(
             system=prompts.SEMANTIC_SYSTEM,
-            user=prompts.semantic_user([(e.requirement_id, e.requirement, e.resume_quote) for e in targets]),
+            user=prompts.semantic_user(
+                [
+                    (
+                        e.requirement_id,
+                        e.requirement,
+                        e.resume_quote,
+                        source_context(e.resume_quote, state["resume_text"]),
+                    )
+                    for e in targets
+                ]
+            ),
             schema=SemanticBatch,
         )
         judged = {j.requirement_id: j for j in batch.judgements}

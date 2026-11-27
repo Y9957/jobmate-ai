@@ -1,0 +1,25 @@
+{
+  "split": "test",
+  "resume_id": "t2",
+  "resume": "배준서 (가상 인물)\n\n[경력]\n가상은행 · 인프라 엔지니어 · 2020.03–2025.02 (4년 11개월)\n- 온프레미스 Linux 서버 200여 대의 패치와 계정 관리를 담당했습니다.\n- Ansible 플레이북으로 서버 설정 배포를 자동화했습니다.\n- 사내 클라우드 전환 TF에 참여해 AWS 마이그레이션 계획서를 작성했습니다.\n- 보안 점검은 정보보호팀이 수행했고, 저는 지적 사항에 따라 방화벽 규칙을 수정했습니다.\n\n[기술]\nLinux, Ansible, Bash, Python, Nginx, Zabbix\n\n[자격증]\n정보처리기사, 리눅스마스터 1급\n\n[학력]\n가상대학교 컴퓨터공학과 학사 졸업 (2020.02)",
+  "jobs": [
+    {
+      "case_id": "t2",
+      "title": "클라우드 인프라 엔지니어",
+      "requirements": [
+        {"text": "Linux 서버 운영 경험", "type": "required", "gold": "met", "tags": ["direct"],
+         "evidence": ["온프레미스 Linux 서버 200여 대의 패치와 계정 관리를 담당했습니다."]},
+        {"text": "설정 관리 자동화 도구(Ansible 등) 사용 경험", "type": "required", "gold": "met", "tags": ["direct"],
+         "evidence": ["Ansible 플레이북으로 서버 설정 배포를 자동화했습니다.", "Linux, Ansible, Bash, Python, Nginx, Zabbix"]},
+        {"text": "AWS 운영 경험", "type": "required", "gold": "not_met", "tags": ["weak_mention", "tempting_quote"], "evidence": []},
+        {"text": "모니터링 도구 사용 경험", "type": "preferred", "gold": "met", "tags": ["paraphrase"],
+         "evidence": ["Linux, Ansible, Bash, Python, Nginx, Zabbix"]},
+        {"text": "보안 취약점 진단 수행 경험", "type": "preferred", "gold": "not_met", "tags": ["weak_mention"], "evidence": []},
+        {"text": "인프라 경력 5년 이상", "type": "constraint", "gold": "not_met", "tags": ["years"], "evidence": []},
+        {"text": "정보처리기사 자격증", "type": "preferred", "gold": "met", "tags": ["direct"],
+         "evidence": ["정보처리기사, 리눅스마스터 1급"]},
+        {"text": "Terraform 사용 경험", "type": "preferred", "gold": "not_met", "tags": ["absent"], "evidence": []}
+      ]
+    }
+  ]
+}

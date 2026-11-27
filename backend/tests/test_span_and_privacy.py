@@ -1,7 +1,7 @@
 import pytest
 
 from app.pipeline.privacy import mask_pii
-from app.pipeline.span import normalize, quote_in_source
+from app.pipeline.span import normalize, quote_in_source, source_context
 
 RESUME = """경력: 데이터 분석 인턴 6개월
 - Python과 Pandas로 매출 데이터 20만 건을 정제했습니다.
@@ -36,6 +36,13 @@ def test_quote_found_despite_cosmetic_differences(quote):
 )
 def test_quote_rejected_when_not_verbatim(quote):
     assert not quote_in_source(quote, RESUME)
+
+
+def test_source_context_includes_section_heading():
+    resume = "[경력]\n- Git으로 협업했습니다.\n\n[기술]\nJava, Spring Boot, Git"
+    assert source_context("Spring Boot", resume) == "[기술] Java, Spring Boot, Git"
+    assert source_context("Git으로 협업했습니다.", resume) == "[경력] Git으로 협업했습니다."
+    assert source_context("", resume) == ""
 
 
 def test_normalize_drops_bullets_and_joins_lines():

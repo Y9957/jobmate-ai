@@ -1,4 +1,5 @@
 {
+  "split": "easy",
   "resume_id": "r2",
   "resume": "박하은 (가상 인물)\n\n[경력]\n프론트엔드 개발자 · 가상핀테크 · 2023.01–2025.06 (2년 6개월)\n- React와 TypeScript로 송금 화면을 개발하고 번들 크기를 25% 줄였습니다.\n- Next.js로 마케팅 페이지를 서버 사이드 렌더링으로 전환했습니다.\n- Jest와 React Testing Library로 컴포넌트 테스트를 작성했습니다.\n\n[프로젝트]\n일정 공유 앱 (개인) · 2022.06–2022.09\n- JavaScript와 Firebase로 웹 앱을 만들었습니다.\n\n[기술]\nJavaScript, TypeScript, React, Next.js, Jest, Figma\n\n[학력]\n가상대학교 시각디자인학과 학사 졸업 (2022.02)",
   "jobs": [

@@ -1,0 +1,26 @@
+{
+  "split": "test",
+  "resume_id": "t5",
+  "resume": "조민혁 (가상 인물)\n\n[경력]\n가상게임즈 · QA 엔지니어 · 2022.04–2025.05 (3년 1개월)\n- Selenium과 pytest로 웹 결제 화면 회귀 테스트를 자동화했습니다.\n- Jenkins에서 야간 테스트를 돌리고 실패 리포트를 Slack으로 보냈습니다.\n- 성능 테스트는 외부 업체에 맡겼고, 저는 결과 보고서를 정리했습니다.\n- 버그 리포트 템플릿을 만들어 재현 실패율을 30% 줄였습니다.\n\n[기술]\nPython, pytest, Selenium, Jenkins, Jira, Postman\n\n[자격증]\nISTQB CTFL\n\n[학력]\n가상대학교 소프트웨어학과 학사 졸업 (2022.02)",
+  "jobs": [
+    {
+      "case_id": "t5",
+      "title": "테스트 자동화 엔지니어 (SDET)",
+      "requirements": [
+        {"text": "테스트 자동화 프레임워크 사용 경험", "type": "required", "gold": "met", "tags": ["paraphrase"],
+         "evidence": ["Selenium과 pytest로 웹 결제 화면 회귀 테스트를 자동화했습니다.", "Python, pytest, Selenium, Jenkins, Jira, Postman"]},
+        {"text": "CI 환경에서 테스트 실행 경험", "type": "required", "gold": "met", "tags": ["paraphrase"],
+         "evidence": ["Jenkins에서 야간 테스트를 돌리고 실패 리포트를 Slack으로 보냈습니다."]},
+        {"text": "성능·부하 테스트 수행 경험", "type": "preferred", "gold": "not_met", "tags": ["weak_mention"], "evidence": []},
+        {"text": "Playwright 사용 경험", "type": "preferred", "gold": "not_met", "tags": ["adjacent_trap"], "evidence": []},
+        {"text": "API 테스트 도구 사용 경험", "type": "preferred", "gold": "met", "tags": ["paraphrase"],
+         "evidence": ["Python, pytest, Selenium, Jenkins, Jira, Postman"]},
+        {"text": "소프트웨어 테스팅 자격증 보유", "type": "preferred", "gold": "met", "tags": ["paraphrase"],
+         "evidence": ["ISTQB CTFL"]},
+        {"text": "QA 경력 3년 이상", "type": "constraint", "gold": "met", "tags": ["years"],
+         "evidence": ["가상게임즈 · QA 엔지니어 · 2022.04–2025.05 (3년 1개월)"]},
+        {"text": "모바일 앱 테스트 경험", "type": "preferred", "gold": "not_met", "tags": ["absent"], "evidence": []}
+      ]
+    }
+  ]
+}

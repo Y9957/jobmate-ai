@@ -1,0 +1,26 @@
+{
+  "split": "test",
+  "resume_id": "t3",
+  "resume": "임소희 (가상 인물)\n\n[경력]\n가상물산 · 데이터 엔지니어 · 2021.07–2025.06 (4년)\n- Airflow DAG로 일 300GB 로그 적재 파이프라인을 운영했습니다.\n- Spark로 이벤트 로그를 정제해 Hive 테이블로 적재했습니다.\n- Kafka Connect를 검토했지만 비용 문제로 도입하지 않았습니다.\n- dbt로 마트 테이블 모델을 관리하고 테스트를 추가했습니다.\n\n[사이드 프로젝트]\n주식 데이터 수집기 (개인) · 2023\n- Python으로 공시 데이터를 매일 수집해 SQLite에 저장했습니다.\n\n[기술]\nPython, SQL, Airflow, Spark, Hive, dbt, AWS S3\n\n[학력]\n가상대학교 수학과 학사 졸업 (2021.02)",
+  "jobs": [
+    {
+      "case_id": "t3",
+      "title": "데이터 엔지니어 (경력)",
+      "requirements": [
+        {"text": "워크플로 오케스트레이션 도구 운영 경험", "type": "required", "gold": "met", "tags": ["paraphrase"],
+         "evidence": ["Airflow DAG로 일 300GB 로그 적재 파이프라인을 운영했습니다."]},
+        {"text": "Spark 등 대용량 데이터 처리 경험", "type": "required", "gold": "met", "tags": ["direct"],
+         "evidence": ["Spark로 이벤트 로그를 정제해 Hive 테이블로 적재했습니다."]},
+        {"text": "Kafka 기반 스트리밍 파이프라인 경험", "type": "preferred", "gold": "not_met", "tags": ["negation"], "evidence": []},
+        {"text": "dbt 사용 경험", "type": "preferred", "gold": "met", "tags": ["direct"],
+         "evidence": ["dbt로 마트 테이블 모델을 관리하고 테스트를 추가했습니다.", "Python, SQL, Airflow, Spark, Hive, dbt, AWS S3"]},
+        {"text": "일 1TB 이상 데이터 처리 경험", "type": "preferred", "gold": "not_met", "tags": ["level_short"], "evidence": []},
+        {"text": "데이터 엔지니어링 경력 3년 이상", "type": "constraint", "gold": "met", "tags": ["years"],
+         "evidence": ["가상물산 · 데이터 엔지니어 · 2021.07–2025.06 (4년)"]},
+        {"text": "Flink 등 실시간 스트림 처리 경험", "type": "preferred", "gold": "not_met", "tags": ["absent"], "evidence": []},
+        {"text": "SQL 활용 능력", "type": "required", "gold": "met", "tags": ["direct"],
+         "evidence": ["Python, SQL, Airflow, Spark, Hive, dbt, AWS S3"]}
+      ]
+    }
+  ]
+}

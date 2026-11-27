@@ -1,0 +1,26 @@
+{
+  "split": "test",
+  "resume_id": "t4",
+  "resume": "노하린 (가상 인물)\n\n[요약]\n서비스 기획 3년 경력을 바탕으로 AI 서비스 개발로 전환하고 있습니다.\n\n[경력]\n가상미디어 · 서비스 기획자 · 2021.03–2024.02 (3년)\n- 추천 피드 개편 프로젝트의 요구사항을 정의하고 개발팀과 일정을 관리했습니다.\n- SQL로 사용자 행동 데이터를 조회해 기획 근거로 활용했습니다.\n- 개발팀이 구축한 추천 모델의 성과 지표를 정의했습니다.\n\n[교육]\n가상 AI 부트캠프 · 2024.03–2024.09\n- Python, 머신러닝 기초, LLM 활용 과정을 수료했습니다.\n\n[프로젝트]\n면접 질문 생성기 (부트캠프 팀 프로젝트) · 2024.08\n- OpenAI API와 LangChain으로 직무별 면접 질문을 생성하는 웹 앱을 만들었습니다.\n- 팀에서 프롬프트 설계와 결과 평가 기준 수립을 맡았습니다.\n\n[기술]\nPython, SQL, LangChain, Streamlit\n\n[학력]\n가상대학교 국어국문학과 학사 졸업 (2021.02)",
+  "jobs": [
+    {
+      "case_id": "t4",
+      "title": "LLM 애플리케이션 개발자 (신입)",
+      "requirements": [
+        {"text": "LLM API를 활용한 애플리케이션 개발 경험", "type": "required", "gold": "met", "tags": ["direct"],
+         "evidence": ["OpenAI API와 LangChain으로 직무별 면접 질문을 생성하는 웹 앱을 만들었습니다."]},
+        {"text": "Python 프로그래밍 능력", "type": "required", "gold": "met", "tags": ["direct"],
+         "evidence": ["Python, SQL, LangChain, Streamlit"]},
+        {"text": "프롬프트 엔지니어링 경험", "type": "preferred", "gold": "met", "tags": ["paraphrase"],
+         "evidence": ["팀에서 프롬프트 설계와 결과 평가 기준 수립을 맡았습니다."]},
+        {"text": "추천 시스템 모델 개발 경험", "type": "preferred", "gold": "not_met", "tags": ["weak_mention"], "evidence": []},
+        {"text": "소프트웨어 개발 실무 경력 2년 이상", "type": "constraint", "gold": "not_met", "tags": ["years", "tempting_quote"], "evidence": []},
+        {"text": "LangChain 사용 경험", "type": "preferred", "gold": "met", "tags": ["direct"],
+         "evidence": ["OpenAI API와 LangChain으로 직무별 면접 질문을 생성하는 웹 앱을 만들었습니다.", "Python, SQL, LangChain, Streamlit"]},
+        {"text": "PyTorch 사용 경험", "type": "preferred", "gold": "not_met", "tags": ["absent"], "evidence": []},
+        {"text": "SQL 활용 능력", "type": "preferred", "gold": "met", "tags": ["direct"],
+         "evidence": ["SQL로 사용자 행동 데이터를 조회해 기획 근거로 활용했습니다.", "Python, SQL, LangChain, Streamlit"]}
+      ]
+    }
+  ]
+}

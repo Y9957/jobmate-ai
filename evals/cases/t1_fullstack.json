@@ -1,0 +1,25 @@
+{
+  "split": "test",
+  "resume_id": "t1",
+  "resume": "문채원 (가상 인물)\n\n[요약]\n초기 스타트업에서 웹 서비스를 처음부터 만들고 운영해 왔습니다.\n\n[경력]\n가상에듀 · 풀스택 개발자 · 2022.09–2025.03 (2년 7개월)\n- Next.js와 TypeScript로 강의 수강 웹을 개발했습니다.\n- Python FastAPI로 수강 신청 API를 만들고 PostgreSQL 스키마를 설계했습니다.\n- Vercel과 AWS Lambda로 서비스를 배포했습니다.\n- 결제 연동은 외부 개발사가 맡았고, 저는 결제 완료 화면만 구현했습니다.\n- 월 활성 사용자 2만 명 규모의 서비스를 혼자 운영했습니다.\n\n가상컨설팅 · 데이터 분석 인턴 · 2022.01–2022.06 (6개월)\n- Excel 매크로로 보고서 작성 시간을 줄였습니다.\n\n[기술]\nTypeScript, React, Next.js, Python, FastAPI, PostgreSQL, AWS Lambda, Vercel\n\n[학습 중]\nRust\n\n[학력]\n가상대학교 경영학과 학사 졸업 (2022.02)",
+  "jobs": [
+    {
+      "case_id": "t1",
+      "title": "풀스택 개발자",
+      "requirements": [
+        {"text": "React 계열 프론트엔드 개발 경험", "type": "required", "gold": "met", "tags": ["paraphrase"],
+         "evidence": ["Next.js와 TypeScript로 강의 수강 웹을 개발했습니다.", "TypeScript, React, Next.js, Python, FastAPI, PostgreSQL, AWS Lambda, Vercel"]},
+        {"text": "Python 웹 API 개발 경험", "type": "required", "gold": "met", "tags": ["direct"],
+         "evidence": ["Python FastAPI로 수강 신청 API를 만들고 PostgreSQL 스키마를 설계했습니다."]},
+        {"text": "데이터베이스 스키마 설계 경험", "type": "required", "gold": "met", "tags": ["direct"],
+         "evidence": ["Python FastAPI로 수강 신청 API를 만들고 PostgreSQL 스키마를 설계했습니다."]},
+        {"text": "결제 시스템(PG) 연동 경험", "type": "preferred", "gold": "not_met", "tags": ["weak_mention"], "evidence": []},
+        {"text": "서버리스 환경 배포 경험", "type": "preferred", "gold": "met", "tags": ["paraphrase"],
+         "evidence": ["Vercel과 AWS Lambda로 서비스를 배포했습니다."]},
+        {"text": "Rust 사용 경험", "type": "preferred", "gold": "not_met", "tags": ["weak_mention"], "evidence": []},
+        {"text": "컴퓨터공학 관련 전공", "type": "constraint", "gold": "not_met", "tags": ["degree"], "evidence": []},
+        {"text": "월 활성 사용자 10만 명 이상 서비스 운영 경험", "type": "preferred", "gold": "not_met", "tags": ["level_short"], "evidence": []}
+      ]
+    }
+  ]
+}
