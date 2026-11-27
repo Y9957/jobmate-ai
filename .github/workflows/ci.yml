@@ -35,14 +35,35 @@ jobs:
       - run: ruff format --check .
       - run: pytest -q
 
+  frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "26"
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci --no-fund --no-audit
+      - run: npm run lint
+      - run: npm run build
+
   compose:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
       - name: Build and start the stack
-        run: docker compose up -d --build --wait --wait-timeout 120
-      - name: Health check through the published port
+        run: docker compose up -d --build --wait --wait-timeout 180
+      - name: API health through the published port
         run: curl --fail --silent http://localhost:8000/health
+      - name: Web app and API through the web container
+        run: |
+          curl --fail --silent http://localhost:3000/ | grep -q "JobMate AI"
+          curl --fail --silent http://localhost:3000/analyses/1 | grep -q "JobMate AI"
+          curl --fail --silent http://localhost:3000/api/dashboard | grep -q applications_by_stage
       - name: Logs on failure
         if: failure()
         run: docker compose logs

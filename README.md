@@ -4,9 +4,11 @@
 
 AI가 "적합도 85점"이라고만 말하는 대신, 공고의 요구조건마다 **이력서의 어떤 문장이 근거인지 인용**하고,
 그 인용이 원문에 실제로 있는지 **코드로 대조**한 뒤 의미가 맞는지 다시 확인합니다.
-그리고 이 검증이 근거 없는 매칭을 얼마나 줄이는지 **평가 데이터로 측정**하는 것이 이 프로젝트의 목표입니다.
+그리고 이 검증이 근거 없는 매칭을 얼마나 줄이는지 **평가 데이터로 측정**합니다.
 
-설계 문서: [docs/design.md](docs/design.md) · 파이프라인 설계: [docs/agent-design.md](docs/agent-design.md)
+설계 문서: [docs/design.md](docs/design.md) · 파이프라인 설계: [docs/agent-design.md](docs/agent-design.md) · 평가: [evals/README.md](evals/README.md)
+
+![분석 결과 화면](docs/images/analysis.jpg)
 
 ## 진행 상황
 
@@ -15,9 +17,9 @@ AI가 "적합도 85점"이라고만 말하는 대신, 공고의 요구조건마�
 | 01 기반 | FastAPI, PostgreSQL, Docker Compose, Alembic 마이그레이션, 테스트, CI | ✅ |
 | 02 분석 파이프라인 | LangGraph: Parser → Matcher → Span Check(코드) → Semantic Check(LLM) → Report | ✅ |
 | 03 평가 | 25케이스·174개 요구조건(easy/dev/test 분리), 라벨 기준표, 검증 단계별 비교 | ✅ (로컬 모델) |
-| 04 API | 이력서·공고·분석·지원현황, 근거 수정 → 재검증 | ⏳ |
-| 05 화면 | React + TypeScript + Vite | |
-| 06 배포 | 샘플 전용 데모, 시연 영상 | |
+| 04 API | 이력서(텍스트·PDF)·공고·분석·지원현황, 근거 수정 → 재검증 | ✅ |
+| 05 화면 | React + TypeScript + Vite, nginx로 서비스 | ✅ |
+| 06 배포 | 샘플 전용 데모, 시연 영상 | ⏳ |
 
 ## 평가 결과 요약
 
@@ -34,81 +36,89 @@ AI가 "적합도 85점"이라고만 말하는 대신, 공고의 요구조건마�
 평가 과정에서 검증 단계가 오히려 맞는 답을 버리게 만든 결함(재시도 피드백이 포기를 유도)을 찾아 고쳤고,
 한 번 본 test는 dev로 옮긴 뒤 새 test를 만들어 다시 측정했습니다. 이 기록은 [evals/README.md](evals/README.md)에 그대로 남겨 두었습니다.
 
+## 화면
+
+| 대시보드 | 근거 수정 → 재검증 |
+|---|---|
+| ![대시보드](docs/images/dashboard.jpg) | ![근거 수정](docs/images/evidence-edit.jpg) |
+
+- **분석 결과:** 요구조건마다 공고 원문, 이력서 근거, 원문 대조·의미 검증 통과 여부, 판정 이유를 보여줍니다. 점수 대신 유형별 충족 수를 보여주고, 학력·경력 같은 제한 조건 미충족은 따로 경고합니다.
+- **근거 수정:** 사용자가 고친 인용문도 원문 대조와 의미 검증을 다시 거칩니다. 이력서에 없는 문장(위 오른쪽 화면)은 저장되지 않고, 비슷한 원문 줄이 있으면 제안합니다.
+- **이력서 등록:** 텍스트를 붙여넣거나 PDF에서 추출한 뒤 확인·수정해서 저장합니다. 연락처는 저장 전에 가려지고 원본 PDF는 저장하지 않습니다.
+
 ## 실행
 
-Docker만 있으면 됩니다.
-
-```bash
-docker compose up -d --build
-curl http://localhost:8000/health
-# {"status":"ok","database":"ok","version":"0.1.0"}
-```
-
-API 문서: http://localhost:8000/docs
-
-컨테이너가 시작될 때 `alembic upgrade head`로 스키마가 자동 적용됩니다.
-
-### 분석 파이프라인 실행 (로컬 LLM)
-
-[Ollama](https://ollama.com)로 로컬 모델을 띄운 뒤, 가상 이력서와 가상 공고로 분석을 돌려 볼 수 있습니다.
+Docker와 [Ollama](https://ollama.com)가 있으면 됩니다. 분석은 PC의 로컬 모델로 돌아갑니다(RTX 3060 12GB 기준 공고 1건 20~40초).
 
 ```bash
 ollama pull qwen3:8b
+docker compose up -d --build
+```
+
+- 웹: http://localhost:3000
+- API 문서: http://localhost:8000/docs
+
+컨테이너가 시작될 때 `alembic upgrade head`로 스키마가 자동 적용됩니다.
+API 컨테이너는 `host.docker.internal:11434`로 PC의 Ollama에 접속합니다(`OLLAMA_BASE_URL`로 변경 가능).
+
+### API
+
+| Method | Path | 설명 |
+|---|---|---|
+| POST | `/api/resumes/extract` | PDF에서 텍스트 추출(저장하지 않음) |
+| POST · GET · DELETE | `/api/resumes` | 이력서 등록(연락처 마스킹)·조회·삭제 |
+| POST · GET · DELETE | `/api/jobs` | 공고 등록·조회·삭제. 링크는 기록만 하고 가져오지 않음 |
+| POST | `/api/analyses` | 분석 시작(백그라운드, 202) |
+| GET | `/api/analyses/{id}` | 결과: 충족 현황, 경고, 요구조건별 근거와 검증 결과 |
+| PATCH | `/api/analyses/{id}/evidence/{eid}` | 근거 수정 → 원문 대조·의미 검증 재실행 |
+| POST · GET · PATCH · DELETE | `/api/applications` | 지원 현황 |
+| GET | `/api/dashboard` | 집계 |
+
+### 명령줄 분석 · 평가
+
+```bash
 cd backend
-python -m app.cli samples/resume_sample.txt samples/job_sample.txt
+python -m app.cli samples/resume_sample.txt samples/job_sample.txt   # 분석 1건
+python -m app.evals.run --split dev                                  # 평가
 ```
 
-```
-필수 2/2  우대 2/3  제한 조건 1/1
+### 테스트
 
-[1] (필수) Python 기반 웹 백엔드 개발 경험 → 충족  [원문대조 O · 의미검증 O]
-    근거: "FastAPI로 사내 분석 API 3종을 개발하고 Docker로 배포했습니다."
-[5] (우대) Kubernetes 환경 운영 경험 → 미충족  [원문대조 - · 의미검증 -]
-    설명: 이력서에 Kubernetes 환경 운영 경험에 대한 언급이 없습니다.
-...
-```
-
-RTX 3060 12GB 기준 분석 1건(요구조건 6개)에 약 20초가 걸립니다.
-
-### 테스트 (로컬)
-
-테스트는 실제 PostgreSQL에서 돌고, 개발 데이터와 분리된 `jobmate_test` DB를 자동으로 만듭니다.
+백엔드 테스트는 실제 PostgreSQL에서 돌고, 개발 데이터와 분리된 `jobmate_test` DB를 자동으로 만듭니다. LLM은 미리 정한 응답으로 대체해 비용이 들지 않습니다.
 
 ```bash
 docker compose up -d db
-cd backend
-python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
-pip install -r requirements-dev.txt
-pytest -q
+cd backend && pip install -r requirements-dev.txt && pytest -q       # 129개
+cd frontend && npm ci && npm run lint && npm run build
 ```
+
+CI(GitHub Actions)는 백엔드 테스트, 프론트엔드 빌드, 그리고 전체 스택을 Docker로 띄워 웹·API 응답까지 확인합니다.
 
 ## 구조
 
 ```
 backend/
   app/
-    main.py        FastAPI 앱
-    config.py      환경 변수 설정 (DATABASE_URL 등)
-    db.py          SQLAlchemy 엔진·세션
-    models.py      resumes · job_postings · analyses · match_evidence · applications
-    api/health.py  /health — DB 왕복 확인, 실패 시 503
+    api/           HTTP API — resumes, jobs, analyses(근거 수정 재검증), applications, dashboard
+    services/      저장된 이력서·공고로 파이프라인 실행, 사용자 수정 재검증
+    pipeline/      LangGraph 파이프라인 — 마스킹, 공고 파싱, 매칭, 원문 대조(+보정), 의미 검증, 리포트
     llm/           LLM 클라이언트 인터페이스 — Ollama(로컬), Fake(테스트)
-    pipeline/      LangGraph 분석 파이프라인 — 마스킹, 공고 파싱, 매칭, 원문 대조, 의미 검증, 리포트
-    cli.py         파이프라인 실행 도구
+    evals/         평가 데이터 로더, 지표, 실행기
+    models.py      resumes · job_postings · analyses · match_evidence · applications
   migrations/      Alembic 마이그레이션
-  samples/         가상 이력서·가상 공고
-  tests/           헬스체크, 스키마, 원문 대조·마스킹, 파이프라인(재시도·강등·의미 검증)
-docker-compose.yml PostgreSQL 16 + API
-docs/design.md     설계 문서
+  tests/           API, 파이프라인, 원문 대조·마스킹, 평가 데이터 무결성, 스키마
+frontend/          React + TypeScript + Vite (nginx로 서비스, /api는 API 컨테이너로 전달)
+evals/             평가 케이스(easy/dev/test), 라벨 기준표, 결과
+docker-compose.yml PostgreSQL 16 + API + Web
 ```
 
 ## 데이터·개인정보 원칙
 
-- 이력서 **원본 PDF는 저장하지 않고**, 개인정보를 가린 텍스트(`masked_text`)만 저장합니다.
-- 공개 데모는 **샘플 이력서 전용**으로 운영합니다.
+- 이력서 **원본 PDF는 저장하지 않고**, 연락처를 가린 텍스트(`masked_text`)만 저장합니다. 모델에도 가린 텍스트만 보냅니다.
+- 이름은 패턴으로 확실히 찾을 수 없어 자동으로 가리지 않습니다. 공개 데모는 **샘플 이력서 전용**으로 운영합니다.
 - 평가 데이터는 가상 이력서와 재작성한 공고만 사용합니다.
 
 ## Stack
 
-Python 3.12 · FastAPI · LangGraph · Pydantic · SQLAlchemy 2 · Alembic · PostgreSQL 16 · Ollama · Docker Compose · pytest · Ruff · GitHub Actions
-(예정: Claude API · PyMuPDF · React · TypeScript)
+Python 3.12 · FastAPI · LangGraph · Pydantic · SQLAlchemy 2 · Alembic · PostgreSQL 16 · PyMuPDF · Ollama · React 19 · TypeScript · Vite · nginx · Docker Compose · pytest · Ruff · GitHub Actions
+(예정: Claude API로 모델 비교 평가)
