@@ -1,7 +1,7 @@
 import pytest
 
 from app.pipeline.privacy import mask_pii
-from app.pipeline.span import normalize, quote_in_source, source_context
+from app.pipeline.span import closest_line, normalize, quote_in_source, repair_quote, source_context
 
 RESUME = """경력: 데이터 분석 인턴 6개월
 - Python과 Pandas로 매출 데이터 20만 건을 정제했습니다.
@@ -36,6 +36,48 @@ def test_quote_found_despite_cosmetic_differences(quote):
 )
 def test_quote_rejected_when_not_verbatim(quote):
     assert not quote_in_source(quote, RESUME)
+
+
+PROJECT_RESUME = """[프로젝트]
+면접 질문 생성기 (부트캠프 팀 프로젝트) · 2024.08
+- OpenAI API와 LangChain으로 직무별 면접 질문을 생성하는 웹 앱을 만들었습니다.
+
+[기술]
+Python, SQL, LangChain, Streamlit"""
+
+
+def test_repair_strips_heading_and_date_glued_onto_a_real_line():
+    glued = (
+        "면접 질문 생성기 (부트캠프 팀 프로젝트) · 2024.08 - "
+        "OpenAI API와 LangChain으로 직무별 면접 질문을 생성하는 웹 앱을 만들었습니다."
+    )
+    assert (
+        repair_quote(glued, PROJECT_RESUME)
+        == "OpenAI API와 LangChain으로 직무별 면접 질문을 생성하는 웹 앱을 만들었습니다."
+    )
+
+
+def test_repair_returns_verbatim_quote_unchanged():
+    assert repair_quote("Python, SQL, LangChain", PROJECT_RESUME) == "Python, SQL, LangChain"
+
+
+@pytest.mark.parametrize(
+    "quote",
+    [
+        "기술 · Python, SQL, LangChain, Streamlit, Docker",  # glued AND altered: no verbatim piece left
+        "OpenAI API로 챗봇을 만들었습니다.",  # paraphrase
+        "2024.08 - 웹",  # pieces too short to trust
+    ],
+)
+def test_repair_never_invents_a_quote(quote):
+    assert repair_quote(quote, PROJECT_RESUME) is None
+
+
+def test_closest_line_points_at_the_real_line():
+    assert (
+        closest_line("기술 · Python, SQL, LangChain, Streamlit", PROJECT_RESUME) == "Python, SQL, LangChain, Streamlit"
+    )
+    assert closest_line("Kubernetes 클러스터를 운영했습니다", PROJECT_RESUME) is None
 
 
 def test_source_context_includes_section_heading():

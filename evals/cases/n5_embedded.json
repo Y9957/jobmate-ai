@@ -1,0 +1,26 @@
+{
+  "split": "test",
+  "resume_id": "n5",
+  "resume": "오태윤 (가상 인물)\n\n[경력]\n가상디바이스 · 임베디드 개발자 · 2022.03–2025.02 (3년)\n- STM32 MCU 기반 센서 보드의 펌웨어를 C로 개발했습니다.\n- FreeRTOS로 센서 수집과 BLE 통신 태스크를 분리했습니다.\n- 회로 설계는 하드웨어팀이 맡았고, 저는 시제품 보드의 동작을 검증했습니다.\n- 펌웨어 OTA 업데이트 기능을 구현했습니다.\n\n[기술]\nC, C++, FreeRTOS, STM32, BLE, Git\n\n[관심 기술]\nRust, Zephyr\n\n[학력]\n가상대학교 전자공학과 학사 졸업 (2022.02)",
+  "jobs": [
+    {
+      "case_id": "n5",
+      "title": "IoT 펌웨어 개발자",
+      "requirements": [
+        {"text": "C 언어 펌웨어 개발 경험", "type": "required", "gold": "met", "tags": ["direct"],
+         "evidence": ["STM32 MCU 기반 센서 보드의 펌웨어를 C로 개발했습니다."]},
+        {"text": "RTOS 사용 경험", "type": "required", "gold": "met", "tags": ["paraphrase"],
+         "evidence": ["FreeRTOS로 센서 수집과 BLE 통신 태스크를 분리했습니다.", "C, C++, FreeRTOS, STM32, BLE, Git"]},
+        {"text": "무선 통신(BLE 등) 구현 경험", "type": "preferred", "gold": "met", "tags": ["paraphrase"],
+         "evidence": ["FreeRTOS로 센서 수집과 BLE 통신 태스크를 분리했습니다."]},
+        {"text": "회로 설계 경험", "type": "preferred", "gold": "not_met", "tags": ["weak_mention"], "evidence": []},
+        {"text": "Zephyr RTOS 사용 경험", "type": "preferred", "gold": "not_met", "tags": ["weak_mention"], "evidence": []},
+        {"text": "OTA 업데이트 구현 경험", "type": "preferred", "gold": "met", "tags": ["direct"],
+         "evidence": ["펌웨어 OTA 업데이트 기능을 구현했습니다."]},
+        {"text": "임베디드 개발 경력 3년 이상", "type": "constraint", "gold": "met", "tags": ["years"],
+         "evidence": ["가상디바이스 · 임베디드 개발자 · 2022.03–2025.02 (3년)"]},
+        {"text": "Linux 디바이스 드라이버 개발 경험", "type": "preferred", "gold": "not_met", "tags": ["absent"], "evidence": []}
+      ]
+    }
+  ]
+}

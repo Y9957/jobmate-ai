@@ -1,0 +1,26 @@
+{
+  "split": "test",
+  "resume_id": "n2",
+  "resume": "차은호 (가상 인물)\n\n[경력]\n가상게임즈 · 클라이언트 개발자 · 2021.11–2025.01 (3년 2개월)\n- Unity와 C#으로 모바일 RPG의 전투 UI를 개발했습니다.\n- 프레임 드랍을 Unity Profiler로 분석해 평균 FPS를 45에서 60으로 올렸습니다.\n- 서버 API는 서버팀이 개발했고, 저는 클라이언트 연동 코드를 작성했습니다.\n- Addressables로 에셋 번들 다운로드 구조를 바꿔 앱 용량을 30% 줄였습니다.\n\n[개인 프로젝트]\n퍼즐 게임 (개인) · 2020\n- Unreal Engine 튜토리얼을 따라 프로토타입을 만들어 보았습니다.\n\n[기술]\nC#, Unity, Git, Jira\n\n[학력]\n가상대학교 게임공학과 학사 졸업 (2021.08)",
+  "jobs": [
+    {
+      "case_id": "n2",
+      "title": "게임 클라이언트 개발자",
+      "requirements": [
+        {"text": "Unity 기반 게임 개발 경험", "type": "required", "gold": "met", "tags": ["direct"],
+         "evidence": ["Unity와 C#으로 모바일 RPG의 전투 UI를 개발했습니다."]},
+        {"text": "C# 프로그래밍 능력", "type": "required", "gold": "met", "tags": ["direct"],
+         "evidence": ["Unity와 C#으로 모바일 RPG의 전투 UI를 개발했습니다.", "C#, Unity, Git, Jira"]},
+        {"text": "게임 성능 최적화 경험", "type": "preferred", "gold": "met", "tags": ["paraphrase"],
+         "evidence": ["프레임 드랍을 Unity Profiler로 분석해 평균 FPS를 45에서 60으로 올렸습니다."]},
+        {"text": "게임 서버 개발 경험", "type": "preferred", "gold": "not_met", "tags": ["weak_mention"], "evidence": []},
+        {"text": "Unreal Engine 실무 개발 경험", "type": "preferred", "gold": "not_met", "tags": ["weak_mention"], "evidence": []},
+        {"text": "에셋 번들·리소스 관리 경험", "type": "preferred", "gold": "met", "tags": ["paraphrase"],
+         "evidence": ["Addressables로 에셋 번들 다운로드 구조를 바꿔 앱 용량을 30% 줄였습니다."]},
+        {"text": "클라이언트 개발 경력 3년 이상", "type": "constraint", "gold": "met", "tags": ["years"],
+         "evidence": ["가상게임즈 · 클라이언트 개발자 · 2021.11–2025.01 (3년 2개월)"]},
+        {"text": "PC·콘솔 게임 출시 경험", "type": "preferred", "gold": "not_met", "tags": ["adjacent_trap"], "evidence": []}
+      ]
+    }
+  ]
+}

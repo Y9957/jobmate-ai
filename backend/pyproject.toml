@@ -10,3 +10,7 @@ extend-exclude = ["migrations/versions"]
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B"]
 ignore = ["B008"]  # FastAPI Depends() in defaults
+
+[tool.ruff.lint.per-file-ignores]
+# Prompt text: reflowing a line changes what the model sees and invalidates eval results
+"app/pipeline/prompts.py" = ["E501"]

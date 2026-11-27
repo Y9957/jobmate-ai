@@ -20,10 +20,11 @@ def test_case_ids_are_unique():
     assert len({c.case_id for c in CASES}) == len(CASES)
 
 
-def test_every_split_is_present_and_test_is_the_largest_hard_split():
+def test_every_split_is_present_and_test_is_big_enough():
     by_split = Counter(c.split for c in CASES)
     assert set(by_split) == {"easy", "dev", "test"}
-    assert by_split["test"] > by_split["dev"]
+    assert by_split["test"] >= 5
+    assert sum(len(c.requirements) for c in CASES if c.split == "test") >= 40
 
 
 def test_new_hard_tags_are_always_not_met():

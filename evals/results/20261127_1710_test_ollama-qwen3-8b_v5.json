@@ -1,0 +1,1668 @@
+{
+  "split": "test",
+  "model": "ollama:qwen3:8b",
+  "prompt_version": "v5",
+  "cases": 5,
+  "seconds": 98.0,
+  "results": [
+    {
+      "system": "baseline",
+      "label": "A. 검증 없음 (첫 매칭 결과를 그대로 신뢰)",
+      "summary": {
+        "items": 40,
+        "predicted_met": 23,
+        "unsupported_met_rate": 0.0435,
+        "fabricated_quote_rate": 0.0,
+        "false_met_rate": 0.0,
+        "met_recall": 0.9565,
+        "verdict_accuracy": 1.0,
+        "false_met_by_tag": {
+          "absent": "0/3",
+          "adjacent_trap": "0/3",
+          "degree": "0/1",
+          "level_short": "0/1",
+          "no_info": "0/1",
+          "tempting_quote": "0/1",
+          "weak_mention": "0/8",
+          "years": "0/1"
+        },
+        "outcomes": {
+          "correct_met": 22,
+          "correct_not": 17,
+          "met_bad_quote": 1
+        }
+      },
+      "llm_calls": 5,
+      "items": [
+        {
+          "case_id": "n1",
+          "requirement": "웹 애플리케이션 취약점 진단 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "OWASP Top 10 기준으로 웹 서비스 모의해킹을 수행하고 취약점 40여 건을 조치했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n1",
+          "requirement": "인증·인가 시스템 구축 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "OAuth 2.0 기반 사내 통합 로그인(SSO)을 Keycloak으로 구축했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n1",
+          "requirement": "WAF 운영 경험",
+          "tags": [
+            "weak_mention"
+          ],
+          "gold": "not_met",
+          "verdict": "insufficient",
+          "quote": "WAF 정책 운영은 외부 관제 업체가 담당했고, 저는 월간 리포트를 검토했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n1",
+          "requirement": "클라우드 보안(AWS IAM 등) 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n1",
+          "requirement": "보안 교육 진행 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "개발자 대상 시큐어 코딩 교육을 분기마다 진행했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n1",
+          "requirement": "보안 분야 경력 5년 이상",
+          "tags": [
+            "years"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n1",
+          "requirement": "정보보안 관련 자격증 보유",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "정보보안기사",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n1",
+          "requirement": "침해사고 대응(포렌식) 경험",
+          "tags": [
+            "absent",
+            "tempting_quote"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n2",
+          "requirement": "Unity 기반 게임 개발 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Unity와 C#으로 모바일 RPG의 전투 UI를 개발했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n2",
+          "requirement": "C# 프로그래밍 능력",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Unity와 C#으로 모바일 RPG의 전투 UI를 개발했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n2",
+          "requirement": "게임 성능 최적화 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "프레임 드랍을 Unity Profiler로 분석해 평균 FPS를 45에서 60으로 올렸습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n2",
+          "requirement": "게임 서버 개발 경험",
+          "tags": [
+            "weak_mention"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n2",
+          "requirement": "Unreal Engine 실무 개발 경험",
+          "tags": [
+            "weak_mention"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n2",
+          "requirement": "에셋 번들·리소스 관리 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Addressables로 에셋 번들 다운로드 구조를 바꿔 앱 용량을 30% 줄였습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n2",
+          "requirement": "클라이언트 개발 경력 3년 이상",
+          "tags": [
+            "years"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "가상게임즈 · 클라이언트 개발자 · 2021.11–2025.01 (3년 2개월)",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n2",
+          "requirement": "PC·콘솔 게임 출시 경험",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n3",
+          "requirement": "웹 로그 분석 도구(GA 등) 활용 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "GA4 데이터를 BigQuery로 내보내 채널별 전환 퍼널을 분석했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n3",
+          "requirement": "SQL을 이용한 데이터 분석 능력",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "GA4 데이터를 BigQuery로 내보내 채널별 전환 퍼널을 분석했습니다.",
+          "quote_exists": true,
+          "outcome": "met_bad_quote",
+          "notes": []
+        },
+        {
+          "case_id": "n3",
+          "requirement": "고객 세분화 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "RFM 기준으로 고객을 세분화해 재구매 캠페인 대상을 선정했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n3",
+          "requirement": "광고 매체 직접 운영 경험",
+          "tags": [
+            "weak_mention"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n3",
+          "requirement": "R 실무 사용 경험",
+          "tags": [
+            "weak_mention"
+          ],
+          "gold": "not_met",
+          "verdict": "insufficient",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n3",
+          "requirement": "학사 이상 학위",
+          "tags": [
+            "no_info",
+            "degree"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n3",
+          "requirement": "대시보드 자동화 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "월간 대시보드를 Looker Studio로 자동화했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n3",
+          "requirement": "Tableau 사용 경험",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n4",
+          "requirement": "검색 엔진(Elasticsearch 등) 활용 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Go로 상품 검색 API를 개발하고 Elasticsearch 색인 구조를 설계했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n4",
+          "requirement": "Go 언어 서버 개발 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Go로 상품 검색 API를 개발하고 Elasticsearch 색인 구조를 설계했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n4",
+          "requirement": "API 응답 성능 개선 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "검색 응답 시간 p99를 800ms에서 250ms로 줄였습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n4",
+          "requirement": "일 100만 건 이상 트래픽 처리 경험",
+          "tags": [
+            "level_short"
+          ],
+          "gold": "not_met",
+          "verdict": "insufficient",
+          "quote": "일 평균 30만 건의 검색 요청을 처리하는 서비스를 운영했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n4",
+          "requirement": "추천 모델 개발 경험",
+          "tags": [
+            "weak_mention"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n4",
+          "requirement": "마이크로서비스 간 통신 구현 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "gRPC로 검색·상품 서비스 간 통신을 구현했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n4",
+          "requirement": "백엔드 개발 경력 4년 이상",
+          "tags": [
+            "years"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "가상중고 · 백엔드 개발자 · 2020.09–2025.03 (4년 6개월)",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n4",
+          "requirement": "OpenSearch 사용 경험",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n5",
+          "requirement": "C 언어 펌웨어 개발 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "STM32 MCU 기반 센서 보드의 펌웨어를 C로 개발했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n5",
+          "requirement": "RTOS 사용 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "FreeRTOS로 센서 수집과 BLE 통신 태스크를 분리했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n5",
+          "requirement": "무선 통신(BLE 등) 구현 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "FreeRTOS로 센서 수집과 BLE 통신 태스크를 분리했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n5",
+          "requirement": "회로 설계 경험",
+          "tags": [
+            "weak_mention"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n5",
+          "requirement": "Zephyr RTOS 사용 경험",
+          "tags": [
+            "weak_mention"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n5",
+          "requirement": "OTA 업데이트 구현 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "펌웨어 OTA 업데이트 기능을 구현했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n5",
+          "requirement": "임베디드 개발 경력 3년 이상",
+          "tags": [
+            "years"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "가상디바이스 · 임베디드 개발자 · 2022.03–2025.02 (3년)",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n5",
+          "requirement": "Linux 디바이스 드라이버 개발 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        }
+      ]
+    },
+    {
+      "system": "span",
+      "label": "B. 원문 대조 + 재시도",
+      "summary": {
+        "items": 40,
+        "predicted_met": 23,
+        "unsupported_met_rate": 0.0435,
+        "fabricated_quote_rate": 0.0,
+        "false_met_rate": 0.0,
+        "met_recall": 0.9565,
+        "verdict_accuracy": 1.0,
+        "false_met_by_tag": {
+          "absent": "0/3",
+          "adjacent_trap": "0/3",
+          "degree": "0/1",
+          "level_short": "0/1",
+          "no_info": "0/1",
+          "tempting_quote": "0/1",
+          "weak_mention": "0/8",
+          "years": "0/1"
+        },
+        "outcomes": {
+          "correct_met": 22,
+          "correct_not": 17,
+          "met_bad_quote": 1
+        }
+      },
+      "llm_calls": 5,
+      "items": [
+        {
+          "case_id": "n1",
+          "requirement": "웹 애플리케이션 취약점 진단 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "OWASP Top 10 기준으로 웹 서비스 모의해킹을 수행하고 취약점 40여 건을 조치했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n1",
+          "requirement": "인증·인가 시스템 구축 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "OAuth 2.0 기반 사내 통합 로그인(SSO)을 Keycloak으로 구축했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n1",
+          "requirement": "WAF 운영 경험",
+          "tags": [
+            "weak_mention"
+          ],
+          "gold": "not_met",
+          "verdict": "insufficient",
+          "quote": "WAF 정책 운영은 외부 관제 업체가 담당했고, 저는 월간 리포트를 검토했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n1",
+          "requirement": "클라우드 보안(AWS IAM 등) 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n1",
+          "requirement": "보안 교육 진행 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "개발자 대상 시큐어 코딩 교육을 분기마다 진행했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n1",
+          "requirement": "보안 분야 경력 5년 이상",
+          "tags": [
+            "years"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n1",
+          "requirement": "정보보안 관련 자격증 보유",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "정보보안기사",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n1",
+          "requirement": "침해사고 대응(포렌식) 경험",
+          "tags": [
+            "absent",
+            "tempting_quote"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n2",
+          "requirement": "Unity 기반 게임 개발 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Unity와 C#으로 모바일 RPG의 전투 UI를 개발했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n2",
+          "requirement": "C# 프로그래밍 능력",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Unity와 C#으로 모바일 RPG의 전투 UI를 개발했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n2",
+          "requirement": "게임 성능 최적화 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "프레임 드랍을 Unity Profiler로 분석해 평균 FPS를 45에서 60으로 올렸습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n2",
+          "requirement": "게임 서버 개발 경험",
+          "tags": [
+            "weak_mention"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n2",
+          "requirement": "Unreal Engine 실무 개발 경험",
+          "tags": [
+            "weak_mention"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n2",
+          "requirement": "에셋 번들·리소스 관리 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Addressables로 에셋 번들 다운로드 구조를 바꿔 앱 용량을 30% 줄였습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n2",
+          "requirement": "클라이언트 개발 경력 3년 이상",
+          "tags": [
+            "years"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "가상게임즈 · 클라이언트 개발자 · 2021.11–2025.01 (3년 2개월)",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n2",
+          "requirement": "PC·콘솔 게임 출시 경험",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n3",
+          "requirement": "웹 로그 분석 도구(GA 등) 활용 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "GA4 데이터를 BigQuery로 내보내 채널별 전환 퍼널을 분석했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n3",
+          "requirement": "SQL을 이용한 데이터 분석 능력",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "GA4 데이터를 BigQuery로 내보내 채널별 전환 퍼널을 분석했습니다.",
+          "quote_exists": true,
+          "outcome": "met_bad_quote",
+          "notes": []
+        },
+        {
+          "case_id": "n3",
+          "requirement": "고객 세분화 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "RFM 기준으로 고객을 세분화해 재구매 캠페인 대상을 선정했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n3",
+          "requirement": "광고 매체 직접 운영 경험",
+          "tags": [
+            "weak_mention"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n3",
+          "requirement": "R 실무 사용 경험",
+          "tags": [
+            "weak_mention"
+          ],
+          "gold": "not_met",
+          "verdict": "insufficient",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n3",
+          "requirement": "학사 이상 학위",
+          "tags": [
+            "no_info",
+            "degree"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n3",
+          "requirement": "대시보드 자동화 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "월간 대시보드를 Looker Studio로 자동화했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n3",
+          "requirement": "Tableau 사용 경험",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n4",
+          "requirement": "검색 엔진(Elasticsearch 등) 활용 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Go로 상품 검색 API를 개발하고 Elasticsearch 색인 구조를 설계했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n4",
+          "requirement": "Go 언어 서버 개발 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Go로 상품 검색 API를 개발하고 Elasticsearch 색인 구조를 설계했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n4",
+          "requirement": "API 응답 성능 개선 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "검색 응답 시간 p99를 800ms에서 250ms로 줄였습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n4",
+          "requirement": "일 100만 건 이상 트래픽 처리 경험",
+          "tags": [
+            "level_short"
+          ],
+          "gold": "not_met",
+          "verdict": "insufficient",
+          "quote": "일 평균 30만 건의 검색 요청을 처리하는 서비스를 운영했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n4",
+          "requirement": "추천 모델 개발 경험",
+          "tags": [
+            "weak_mention"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n4",
+          "requirement": "마이크로서비스 간 통신 구현 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "gRPC로 검색·상품 서비스 간 통신을 구현했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n4",
+          "requirement": "백엔드 개발 경력 4년 이상",
+          "tags": [
+            "years"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "가상중고 · 백엔드 개발자 · 2020.09–2025.03 (4년 6개월)",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n4",
+          "requirement": "OpenSearch 사용 경험",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n5",
+          "requirement": "C 언어 펌웨어 개발 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "STM32 MCU 기반 센서 보드의 펌웨어를 C로 개발했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n5",
+          "requirement": "RTOS 사용 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "FreeRTOS로 센서 수집과 BLE 통신 태스크를 분리했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n5",
+          "requirement": "무선 통신(BLE 등) 구현 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "FreeRTOS로 센서 수집과 BLE 통신 태스크를 분리했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n5",
+          "requirement": "회로 설계 경험",
+          "tags": [
+            "weak_mention"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n5",
+          "requirement": "Zephyr RTOS 사용 경험",
+          "tags": [
+            "weak_mention"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n5",
+          "requirement": "OTA 업데이트 구현 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "펌웨어 OTA 업데이트 기능을 구현했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n5",
+          "requirement": "임베디드 개발 경력 3년 이상",
+          "tags": [
+            "years"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "가상디바이스 · 임베디드 개발자 · 2022.03–2025.02 (3년)",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n5",
+          "requirement": "Linux 디바이스 드라이버 개발 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        }
+      ]
+    },
+    {
+      "system": "full",
+      "label": "C. 원문 대조 + 재시도 + 의미 검증",
+      "summary": {
+        "items": 40,
+        "predicted_met": 23,
+        "unsupported_met_rate": 0.0435,
+        "fabricated_quote_rate": 0.0,
+        "false_met_rate": 0.0,
+        "met_recall": 0.9565,
+        "verdict_accuracy": 1.0,
+        "false_met_by_tag": {
+          "absent": "0/3",
+          "adjacent_trap": "0/3",
+          "degree": "0/1",
+          "level_short": "0/1",
+          "no_info": "0/1",
+          "tempting_quote": "0/1",
+          "weak_mention": "0/8",
+          "years": "0/1"
+        },
+        "outcomes": {
+          "correct_met": 22,
+          "correct_not": 17,
+          "met_bad_quote": 1
+        }
+      },
+      "llm_calls": 10,
+      "items": [
+        {
+          "case_id": "n1",
+          "requirement": "웹 애플리케이션 취약점 진단 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "OWASP Top 10 기준으로 웹 서비스 모의해킹을 수행하고 취약점 40여 건을 조치했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n1",
+          "requirement": "인증·인가 시스템 구축 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "OAuth 2.0 기반 사내 통합 로그인(SSO)을 Keycloak으로 구축했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n1",
+          "requirement": "WAF 운영 경험",
+          "tags": [
+            "weak_mention"
+          ],
+          "gold": "not_met",
+          "verdict": "insufficient",
+          "quote": "WAF 정책 운영은 외부 관제 업체가 담당했고, 저는 월간 리포트를 검토했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n1",
+          "requirement": "클라우드 보안(AWS IAM 등) 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n1",
+          "requirement": "보안 교육 진행 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "개발자 대상 시큐어 코딩 교육을 분기마다 진행했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n1",
+          "requirement": "보안 분야 경력 5년 이상",
+          "tags": [
+            "years"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n1",
+          "requirement": "정보보안 관련 자격증 보유",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "정보보안기사",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n1",
+          "requirement": "침해사고 대응(포렌식) 경험",
+          "tags": [
+            "absent",
+            "tempting_quote"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n2",
+          "requirement": "Unity 기반 게임 개발 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Unity와 C#으로 모바일 RPG의 전투 UI를 개발했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n2",
+          "requirement": "C# 프로그래밍 능력",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Unity와 C#으로 모바일 RPG의 전투 UI를 개발했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n2",
+          "requirement": "게임 성능 최적화 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "프레임 드랍을 Unity Profiler로 분석해 평균 FPS를 45에서 60으로 올렸습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n2",
+          "requirement": "게임 서버 개발 경험",
+          "tags": [
+            "weak_mention"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n2",
+          "requirement": "Unreal Engine 실무 개발 경험",
+          "tags": [
+            "weak_mention"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n2",
+          "requirement": "에셋 번들·리소스 관리 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Addressables로 에셋 번들 다운로드 구조를 바꿔 앱 용량을 30% 줄였습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n2",
+          "requirement": "클라이언트 개발 경력 3년 이상",
+          "tags": [
+            "years"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "가상게임즈 · 클라이언트 개발자 · 2021.11–2025.01 (3년 2개월)",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n2",
+          "requirement": "PC·콘솔 게임 출시 경험",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n3",
+          "requirement": "웹 로그 분석 도구(GA 등) 활용 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "GA4 데이터를 BigQuery로 내보내 채널별 전환 퍼널을 분석했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n3",
+          "requirement": "SQL을 이용한 데이터 분석 능력",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "GA4 데이터를 BigQuery로 내보내 채널별 전환 퍼널을 분석했습니다.",
+          "quote_exists": true,
+          "outcome": "met_bad_quote",
+          "notes": []
+        },
+        {
+          "case_id": "n3",
+          "requirement": "고객 세분화 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "RFM 기준으로 고객을 세분화해 재구매 캠페인 대상을 선정했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n3",
+          "requirement": "광고 매체 직접 운영 경험",
+          "tags": [
+            "weak_mention"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n3",
+          "requirement": "R 실무 사용 경험",
+          "tags": [
+            "weak_mention"
+          ],
+          "gold": "not_met",
+          "verdict": "insufficient",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n3",
+          "requirement": "학사 이상 학위",
+          "tags": [
+            "no_info",
+            "degree"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n3",
+          "requirement": "대시보드 자동화 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "월간 대시보드를 Looker Studio로 자동화했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n3",
+          "requirement": "Tableau 사용 경험",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n4",
+          "requirement": "검색 엔진(Elasticsearch 등) 활용 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Go로 상품 검색 API를 개발하고 Elasticsearch 색인 구조를 설계했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n4",
+          "requirement": "Go 언어 서버 개발 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Go로 상품 검색 API를 개발하고 Elasticsearch 색인 구조를 설계했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n4",
+          "requirement": "API 응답 성능 개선 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "검색 응답 시간 p99를 800ms에서 250ms로 줄였습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n4",
+          "requirement": "일 100만 건 이상 트래픽 처리 경험",
+          "tags": [
+            "level_short"
+          ],
+          "gold": "not_met",
+          "verdict": "insufficient",
+          "quote": "일 평균 30만 건의 검색 요청을 처리하는 서비스를 운영했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n4",
+          "requirement": "추천 모델 개발 경험",
+          "tags": [
+            "weak_mention"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n4",
+          "requirement": "마이크로서비스 간 통신 구현 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "gRPC로 검색·상품 서비스 간 통신을 구현했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n4",
+          "requirement": "백엔드 개발 경력 4년 이상",
+          "tags": [
+            "years"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "가상중고 · 백엔드 개발자 · 2020.09–2025.03 (4년 6개월)",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n4",
+          "requirement": "OpenSearch 사용 경험",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n5",
+          "requirement": "C 언어 펌웨어 개발 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "STM32 MCU 기반 센서 보드의 펌웨어를 C로 개발했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n5",
+          "requirement": "RTOS 사용 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "FreeRTOS로 센서 수집과 BLE 통신 태스크를 분리했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n5",
+          "requirement": "무선 통신(BLE 등) 구현 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "FreeRTOS로 센서 수집과 BLE 통신 태스크를 분리했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n5",
+          "requirement": "회로 설계 경험",
+          "tags": [
+            "weak_mention"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n5",
+          "requirement": "Zephyr RTOS 사용 경험",
+          "tags": [
+            "weak_mention"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "n5",
+          "requirement": "OTA 업데이트 구현 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "펌웨어 OTA 업데이트 기능을 구현했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n5",
+          "requirement": "임베디드 개발 경력 3년 이상",
+          "tags": [
+            "years"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "가상디바이스 · 임베디드 개발자 · 2022.03–2025.02 (3년)",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "n5",
+          "requirement": "Linux 디바이스 드라이버 개발 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        }
+      ]
+    }
+  ]
+}

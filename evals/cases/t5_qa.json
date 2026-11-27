@@ -1,5 +1,5 @@
 {
-  "split": "test",
+  "split": "dev",
   "resume_id": "t5",
   "resume": "조민혁 (가상 인물)\n\n[경력]\n가상게임즈 · QA 엔지니어 · 2022.04–2025.05 (3년 1개월)\n- Selenium과 pytest로 웹 결제 화면 회귀 테스트를 자동화했습니다.\n- Jenkins에서 야간 테스트를 돌리고 실패 리포트를 Slack으로 보냈습니다.\n- 성능 테스트는 외부 업체에 맡겼고, 저는 결과 보고서를 정리했습니다.\n- 버그 리포트 템플릿을 만들어 재현 실패율을 30% 줄였습니다.\n\n[기술]\nPython, pytest, Selenium, Jenkins, Jira, Postman\n\n[자격증]\nISTQB CTFL\n\n[학력]\n가상대학교 소프트웨어학과 학사 졸업 (2022.02)",
   "jobs": [

@@ -34,7 +34,7 @@ from app.pipeline.schemas import (
     MatchBatch,
     SemanticBatch,
 )
-from app.pipeline.span import quote_in_source, source_context
+from app.pipeline.span import closest_line, quote_in_source, repair_quote, source_context
 
 
 class State(TypedDict, total=False):
@@ -47,6 +47,19 @@ class State(TypedDict, total=False):
     attempts: int
     trace: list[str]
     report: AnalysisReport
+    # For evaluation: evidence as it stood after each stage, and LLM calls per stage
+    snapshots: dict[str, list[Evidence]]
+    calls: dict[str, int]
+
+
+def _snap(state: State, stage: str, evidence: dict[int, Evidence]) -> dict[str, list[Evidence]]:
+    return {**state.get("snapshots", {}), stage: [evidence[k] for k in sorted(evidence)]}
+
+
+def _count(state: State, stage: str) -> dict[str, int]:
+    calls = dict(state.get("calls", {}))
+    calls[stage] = calls.get(stage, 0) + 1
+    return calls
 
 
 def build_graph(llm: LLMClient, max_attempts: int = 3, verify_span: bool = True, verify_semantic: bool = True):
@@ -104,12 +117,16 @@ def build_graph(llm: LLMClient, max_attempts: int = 3, verify_span: bool = True,
             evidence[rid] = evidence[rid].model_copy(update={"match_attempts": evidence[rid].match_attempts + 1})
         missing = [rid for rid in pending if rid not in answered]
         attempt = state.get("attempts", 0) + 1
-        return {
+        update: State = {
             "evidence": evidence,
             "attempts": attempt,
             "feedback": {rid: "이 requirement_id에 대한 답이 없었습니다." for rid in missing},
+            "calls": _count(state, "match"),
             "trace": log(state, f"match #{attempt}: {len(answered)}/{len(pending)} answered"),
         }
+        if attempt == 1:  # what an unverified single call would have returned
+            update["snapshots"] = _snap(state, "first_match", evidence)
+        return update
 
     def span_check(state: State) -> State:
         if not verify_span:
@@ -121,17 +138,18 @@ def build_graph(llm: LLMClient, max_attempts: int = 3, verify_span: bool = True,
                 still_pending.append(rid)
                 continue
             e = evidence[rid]
-            if e.resume_quote and quote_in_source(e.resume_quote, state["resume_text"]):
-                evidence[rid] = e.model_copy(update={"span_verified": True})
+            repaired = repair_quote(e.resume_quote, state["resume_text"]) if e.resume_quote else None
+            if repaired is not None:
+                notes = e.notes
+                if repaired != e.resume_quote:
+                    notes = [*notes, f'인용문 앞뒤에 붙은 제목·날짜를 떼어 원문과 맞춤 ("{e.resume_quote}")']
+                evidence[rid] = e.model_copy(update={"resume_quote": repaired, "span_verified": True, "notes": notes})
             elif not e.resume_quote and e.verdict != "met":
                 evidence[rid] = e.model_copy(update={"span_verified": False})
             else:
                 still_pending.append(rid)
-                feedback[rid] = (
-                    "충족(met)으로 판정했지만 인용문이 비어 있습니다."
-                    if not e.resume_quote
-                    else f'인용문 "{e.resume_quote}"이(가) 이력서에 없습니다. 이력서 문장을 그대로 복사하거나, '
-                    "근거가 없으면 빈 문자열과 not_met으로 답하세요."
+                feedback[rid] = prompts.span_feedback(
+                    e.resume_quote, e.verdict, closest_line(e.resume_quote or e.requirement, state["resume_text"])
                 )
 
         exhausted = state["attempts"] >= max_attempts
@@ -154,12 +172,15 @@ def build_graph(llm: LLMClient, max_attempts: int = 3, verify_span: bool = True,
             still_pending, feedback = [], {}
         else:
             msg = f"span_check: {len(state['pending']) - len(still_pending)} ok, {len(still_pending)} retry"
-        return {
+        update: State = {
             "evidence": evidence,
             "pending": still_pending,
             "feedback": {rid: feedback[rid] for rid in still_pending},
             "trace": log(state, msg),
         }
+        if not still_pending:
+            update["snapshots"] = _snap(state, "after_span", evidence)
+        return update
 
     def record_spans_only(state: State) -> State:
         """Verification off: note whether each quote exists, but keep the model's answer as is."""
@@ -178,12 +199,15 @@ def build_graph(llm: LLMClient, max_attempts: int = 3, verify_span: bool = True,
         return "match" if state["pending"] else "semantic_check"
 
     def semantic_check(state: State) -> State:
-        if not verify_semantic:
-            return {"trace": log(state, "semantic_check: off")}
         evidence = dict(state["evidence"])
+        if not verify_semantic:
+            return {"snapshots": _snap(state, "after_semantic", evidence), "trace": log(state, "semantic_check: off")}
         targets = [e for e in evidence.values() if e.verdict == "met" and e.span_verified]
         if not targets:
-            return {"trace": log(state, "semantic_check: nothing to check")}
+            return {
+                "snapshots": _snap(state, "after_semantic", evidence),
+                "trace": log(state, "semantic_check: nothing to check"),
+            }
         batch = llm.structured(
             system=prompts.SEMANTIC_SYSTEM,
             user=prompts.semantic_user(
@@ -218,6 +242,8 @@ def build_graph(llm: LLMClient, max_attempts: int = 3, verify_span: bool = True,
                 )
         return {
             "evidence": evidence,
+            "snapshots": _snap(state, "after_semantic", evidence),
+            "calls": _count(state, "semantic"),
             "trace": log(state, f"semantic_check: {len(targets)} checked, {downgraded} downgraded"),
         }
 
@@ -280,7 +306,23 @@ def run_matching(
     verify_span: bool = True,
     verify_semantic: bool = True,
 ) -> AnalysisReport:
-    """Skip job parsing and judge a fixed list of requirements (used by the evaluation)."""
+    """Skip job parsing and judge a fixed list of requirements."""
+    return run_matching_stages(resume_text, requirements, llm, max_attempts, verify_span, verify_semantic)["report"]
+
+
+def run_matching_stages(
+    resume_text: str,
+    requirements: list[ExtractedRequirement],
+    llm: LLMClient,
+    max_attempts: int = 3,
+    verify_span: bool = True,
+    verify_semantic: bool = True,
+) -> State:
+    """Like run_matching, but return the final state with per-stage snapshots and call counts.
+
+    The evaluation reads "first_match" (no verification), "after_span" and "after_semantic"
+    from one run, so the three settings are compared on the same model outputs.
+    """
     evidence = {
         i: Evidence(
             requirement_id=i,
@@ -293,7 +335,6 @@ def run_matching(
         for i, r in enumerate(requirements, start=1)
     }
     graph = build_graph(llm, max_attempts, verify_span, verify_semantic)
-    final = graph.invoke(
+    return graph.invoke(
         {"resume_text": resume_text, "evidence": evidence, "pending": list(evidence), "feedback": {}, "attempts": 0}
     )
-    return final["report"]

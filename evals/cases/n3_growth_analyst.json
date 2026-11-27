@@ -1,0 +1,25 @@
+{
+  "split": "test",
+  "resume_id": "n3",
+  "resume": "김도아 (가상 인물)\n\n[요약]\n마케팅 성과 분석과 고객 세분화를 주로 해 왔습니다.\n\n[경력]\n가상뷰티 · 마케팅 데이터 분석가 · 2023.04–2025.07 (2년 3개월)\n- GA4 데이터를 BigQuery로 내보내 채널별 전환 퍼널을 분석했습니다.\n- RFM 기준으로 고객을 세분화해 재구매 캠페인 대상을 선정했습니다.\n- 광고 집행은 대행사가 맡았고, 저는 매체별 성과 보고서를 만들었습니다.\n- 월간 대시보드를 Looker Studio로 자동화했습니다.\n\n[교육]\n- 가상 데이터 분석 과정 수료 (R 기초 포함, 2022)\n\n[기술]\nSQL, Python, BigQuery, GA4, Looker Studio, Excel",
+  "jobs": [
+    {
+      "case_id": "n3",
+      "title": "그로스 데이터 분석가",
+      "requirements": [
+        {"text": "웹 로그 분석 도구(GA 등) 활용 경험", "type": "required", "gold": "met", "tags": ["paraphrase"],
+         "evidence": ["GA4 데이터를 BigQuery로 내보내 채널별 전환 퍼널을 분석했습니다.", "SQL, Python, BigQuery, GA4, Looker Studio, Excel"]},
+        {"text": "SQL을 이용한 데이터 분석 능력", "type": "required", "gold": "met", "tags": ["direct"],
+         "evidence": ["SQL, Python, BigQuery, GA4, Looker Studio, Excel"]},
+        {"text": "고객 세분화 경험", "type": "preferred", "gold": "met", "tags": ["direct"],
+         "evidence": ["RFM 기준으로 고객을 세분화해 재구매 캠페인 대상을 선정했습니다."]},
+        {"text": "광고 매체 직접 운영 경험", "type": "preferred", "gold": "not_met", "tags": ["weak_mention"], "evidence": []},
+        {"text": "R 실무 사용 경험", "type": "preferred", "gold": "not_met", "tags": ["weak_mention"], "evidence": []},
+        {"text": "학사 이상 학위", "type": "constraint", "gold": "not_met", "tags": ["no_info", "degree"], "evidence": []},
+        {"text": "대시보드 자동화 경험", "type": "preferred", "gold": "met", "tags": ["direct"],
+         "evidence": ["월간 대시보드를 Looker Studio로 자동화했습니다."]},
+        {"text": "Tableau 사용 경험", "type": "preferred", "gold": "not_met", "tags": ["adjacent_trap"], "evidence": []}
+      ]
+    }
+  ]
+}

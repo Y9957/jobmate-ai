@@ -1,0 +1,25 @@
+{
+  "split": "test",
+  "resume_id": "n1",
+  "resume": "류시온 (가상 인물)\n\n[요약]\n웹 서비스 보안 점검과 인증 시스템 개선을 해 왔습니다.\n\n[경력]\n가상페이 · 보안 엔지니어 · 2022.06–2025.06 (3년)\n- OWASP Top 10 기준으로 웹 서비스 모의해킹을 수행하고 취약점 40여 건을 조치했습니다.\n- OAuth 2.0 기반 사내 통합 로그인(SSO)을 Keycloak으로 구축했습니다.\n- WAF 정책 운영은 외부 관제 업체가 담당했고, 저는 월간 리포트를 검토했습니다.\n- 개발자 대상 시큐어 코딩 교육을 분기마다 진행했습니다.\n\n[기술]\nBurp Suite, Python, Keycloak, Linux, Wireshark\n\n[자격증]\n정보보안기사\n\n[학력]\n가상대학교 정보보호학과 학사 졸업 (2022.02)",
+  "jobs": [
+    {
+      "case_id": "n1",
+      "title": "보안 엔지니어",
+      "requirements": [
+        {"text": "웹 애플리케이션 취약점 진단 경험", "type": "required", "gold": "met", "tags": ["paraphrase"],
+         "evidence": ["OWASP Top 10 기준으로 웹 서비스 모의해킹을 수행하고 취약점 40여 건을 조치했습니다."]},
+        {"text": "인증·인가 시스템 구축 경험", "type": "required", "gold": "met", "tags": ["paraphrase"],
+         "evidence": ["OAuth 2.0 기반 사내 통합 로그인(SSO)을 Keycloak으로 구축했습니다."]},
+        {"text": "WAF 운영 경험", "type": "preferred", "gold": "not_met", "tags": ["weak_mention"], "evidence": []},
+        {"text": "클라우드 보안(AWS IAM 등) 경험", "type": "preferred", "gold": "not_met", "tags": ["absent"], "evidence": []},
+        {"text": "보안 교육 진행 경험", "type": "preferred", "gold": "met", "tags": ["direct"],
+         "evidence": ["개발자 대상 시큐어 코딩 교육을 분기마다 진행했습니다."]},
+        {"text": "보안 분야 경력 5년 이상", "type": "constraint", "gold": "not_met", "tags": ["years"], "evidence": []},
+        {"text": "정보보안 관련 자격증 보유", "type": "preferred", "gold": "met", "tags": ["paraphrase"],
+         "evidence": ["정보보안기사"]},
+        {"text": "침해사고 대응(포렌식) 경험", "type": "preferred", "gold": "not_met", "tags": ["absent", "tempting_quote"], "evidence": []}
+      ]
+    }
+  ]
+}

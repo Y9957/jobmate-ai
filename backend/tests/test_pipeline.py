@@ -184,3 +184,83 @@ def test_job_quote_not_in_posting_is_flagged():
     llm.queue(MatchBatch, MatchBatch(matches=[m(1, "not_met", "")]))
     report = run_analysis(RESUME, JOB, llm)
     assert report.evidence[0].job_quote_verified is False
+
+
+# ---------- v4: quote repair, retry feedback, staged snapshots ----------
+
+
+def test_heading_glued_quote_is_repaired_in_code_without_a_retry():
+    llm = FakeLLM()
+    llm.queue(JobRequirements, REQS)
+    llm.queue(
+        MatchBatch,
+        MatchBatch(
+            matches=[
+                m(1, "met", "경력 · 2025 - FastAPI로 사내 분석 API 3종을 개발했습니다."),
+                m(2, "not_met", ""),
+                m(3, "not_met", ""),
+            ]
+        ),
+    )
+    llm.queue(SemanticBatch, SemanticBatch(judgements=[SemanticItem(requirement_id=1, supports=True, reason="ok")]))
+
+    report = run_analysis(RESUME, JOB, llm)
+
+    assert llm.count(MatchBatch) == 1
+    first = report.evidence[0]
+    assert first.resume_quote == "FastAPI로 사내 분석 API 3종을 개발했습니다." and first.span_verified
+    assert "떼어 원문과 맞춤" in first.notes[0]
+
+
+def test_retry_feedback_shows_closest_line_and_does_not_invite_giving_up():
+    llm = FakeLLM()
+    llm.queue(JobRequirements, REQS)
+    llm.queue(
+        MatchBatch,
+        MatchBatch(
+            matches=[m(1, "met", "FastAPI로 사내 API 3종을 만들었습니다."), m(2, "not_met", ""), m(3, "not_met", "")]
+        ),
+        MatchBatch(matches=[m(1, "met", "FastAPI로 사내 분석 API 3종을 개발했습니다.")]),
+    )
+    llm.queue(SemanticBatch, SemanticBatch(judgements=[SemanticItem(requirement_id=1, supports=True, reason="ok")]))
+
+    run_analysis(RESUME, JOB, llm)
+
+    retry_prompt = [user for name, _, user in llm.calls if name == "MatchBatch"][1]
+    assert '가장 비슷한 이력서 줄: "FastAPI로 사내 분석 API 3종을 개발했습니다."' in retry_prompt
+    assert "근거가 없으면 빈 문자열과 not_met" not in retry_prompt
+
+
+def test_stage_snapshots_come_from_one_run():
+    from app.pipeline.graph import run_matching_stages
+
+    llm = FakeLLM()
+    llm.queue(
+        MatchBatch,
+        MatchBatch(
+            matches=[
+                m(1, "met", "지어낸 문장입니다"),
+                m(2, "not_met", ""),
+                m(3, "met", "Python과 Pandas로 매출 데이터 20만 건을 정제했습니다."),
+            ]
+        ),
+        MatchBatch(matches=[m(1, "met", "FastAPI로 사내 분석 API 3종을 개발했습니다.")]),
+    )
+    llm.queue(
+        SemanticBatch,
+        SemanticBatch(
+            judgements=[
+                SemanticItem(requirement_id=1, supports=True, reason="ok"),
+                SemanticItem(requirement_id=3, supports=False, reason="SQL 언급 없음"),
+            ]
+        ),
+    )
+
+    final = run_matching_stages(RESUME, REQS.requirements, llm)
+    snaps = final["snapshots"]
+
+    assert snaps["first_match"][0].resume_quote == "지어낸 문장입니다"  # A: the raw first answer
+    assert snaps["after_span"][0].resume_quote == "FastAPI로 사내 분석 API 3종을 개발했습니다."  # B: fixed by retry
+    assert snaps["after_span"][2].verdict == "met"  # B: real quote, still trusted
+    assert snaps["after_semantic"][2].verdict == "insufficient"  # C: semantic check rejects it
+    assert final["calls"] == {"match": 2, "semantic": 1}

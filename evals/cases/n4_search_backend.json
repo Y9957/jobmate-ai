@@ -1,0 +1,26 @@
+{
+  "split": "test",
+  "resume_id": "n4",
+  "resume": "신하준 (가상 인물)\n\n[경력]\n가상중고 · 백엔드 개발자 · 2020.09–2025.03 (4년 6개월)\n- Go로 상품 검색 API를 개발하고 Elasticsearch 색인 구조를 설계했습니다.\n- 검색 응답 시간 p99를 800ms에서 250ms로 줄였습니다.\n- 일 평균 30만 건의 검색 요청을 처리하는 서비스를 운영했습니다.\n- 추천 모델 학습은 ML팀이 담당했고, 저는 추천 결과를 내려주는 API를 만들었습니다.\n- gRPC로 검색·상품 서비스 간 통신을 구현했습니다.\n\n[기술]\nGo, Elasticsearch, gRPC, PostgreSQL, Redis, Kubernetes\n\n[학력]\n가상대학교 컴퓨터공학과 학사 졸업 (2020.08)",
+  "jobs": [
+    {
+      "case_id": "n4",
+      "title": "검색 백엔드 개발자 (경력)",
+      "requirements": [
+        {"text": "검색 엔진(Elasticsearch 등) 활용 경험", "type": "required", "gold": "met", "tags": ["direct"],
+         "evidence": ["Go로 상품 검색 API를 개발하고 Elasticsearch 색인 구조를 설계했습니다.", "Go, Elasticsearch, gRPC, PostgreSQL, Redis, Kubernetes"]},
+        {"text": "Go 언어 서버 개발 경험", "type": "required", "gold": "met", "tags": ["direct"],
+         "evidence": ["Go로 상품 검색 API를 개발하고 Elasticsearch 색인 구조를 설계했습니다."]},
+        {"text": "API 응답 성능 개선 경험", "type": "preferred", "gold": "met", "tags": ["paraphrase"],
+         "evidence": ["검색 응답 시간 p99를 800ms에서 250ms로 줄였습니다."]},
+        {"text": "일 100만 건 이상 트래픽 처리 경험", "type": "preferred", "gold": "not_met", "tags": ["level_short"], "evidence": []},
+        {"text": "추천 모델 개발 경험", "type": "preferred", "gold": "not_met", "tags": ["weak_mention"], "evidence": []},
+        {"text": "마이크로서비스 간 통신 구현 경험", "type": "preferred", "gold": "met", "tags": ["paraphrase"],
+         "evidence": ["gRPC로 검색·상품 서비스 간 통신을 구현했습니다."]},
+        {"text": "백엔드 개발 경력 4년 이상", "type": "constraint", "gold": "met", "tags": ["years"],
+         "evidence": ["가상중고 · 백엔드 개발자 · 2020.09–2025.03 (4년 6개월)"]},
+        {"text": "OpenSearch 사용 경험", "type": "preferred", "gold": "not_met", "tags": ["adjacent_trap"], "evidence": []}
+      ]
+    }
+  ]
+}
