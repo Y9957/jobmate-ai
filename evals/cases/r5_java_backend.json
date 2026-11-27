@@ -1,0 +1,35 @@
+{
+  "resume_id": "r5",
+  "resume": "한도윤 (가상 인물)\n\n[경력]\n백엔드 개발자 · 가상물류 · 2023.07–2025.07 (2년)\n- Spring Boot와 JPA로 배송 추적 API를 개발했습니다.\n- Redis 캐시를 도입해 조회 API 응답 시간을 절반으로 줄였습니다.\n- MySQL 슬로우 쿼리를 분석해 인덱스를 추가했습니다.\n\n[기술]\nJava, Spring Boot, JPA, MySQL, Redis, Git\n\n[학력]\n가상대학교 소프트웨어학과 학사 졸업 (2023.02)",
+  "jobs": [
+    {
+      "case_id": "r5_a",
+      "title": "Java 백엔드 개발자 (경력)",
+      "requirements": [
+        {"text": "Java·Spring Boot 기반 서버 개발 경험", "type": "required", "gold": "met", "tags": ["direct"],
+         "evidence": ["Spring Boot와 JPA로 배송 추적 API를 개발했습니다.", "Java, Spring Boot, JPA, MySQL, Redis, Git"]},
+        {"text": "RDBMS 쿼리 튜닝 경험", "type": "required", "gold": "met", "tags": ["paraphrase"],
+         "evidence": ["MySQL 슬로우 쿼리를 분석해 인덱스를 추가했습니다."]},
+        {"text": "백엔드 개발 경력 3년 이상", "type": "constraint", "gold": "not_met", "tags": ["years"], "evidence": []},
+        {"text": "Kotlin 사용 경험", "type": "preferred", "gold": "not_met", "tags": ["absent"], "evidence": []},
+        {"text": "캐시 시스템 활용 경험", "type": "preferred", "gold": "met", "tags": ["paraphrase"],
+         "evidence": ["Redis 캐시를 도입해 조회 API 응답 시간을 절반으로 줄였습니다."]},
+        {"text": "Kafka 등 메시지 큐 사용 경험", "type": "preferred", "gold": "not_met", "tags": ["absent"], "evidence": []}
+      ]
+    },
+    {
+      "case_id": "r5_b",
+      "title": "Python 서버 개발자",
+      "requirements": [
+        {"text": "Python 기반 서버 개발 경험", "type": "required", "gold": "not_met", "tags": ["absent", "tempting_quote"], "evidence": []},
+        {"text": "Git 사용 능력", "type": "required", "gold": "met", "tags": ["direct"],
+         "evidence": ["Java, Spring Boot, JPA, MySQL, Redis, Git"]},
+        {"text": "Spring Boot 사용 경험", "type": "preferred", "gold": "met", "tags": ["direct"],
+         "evidence": ["Spring Boot와 JPA로 배송 추적 API를 개발했습니다.", "Java, Spring Boot, JPA, MySQL, Redis, Git"]},
+        {"text": "MongoDB 사용 경험", "type": "preferred", "gold": "not_met", "tags": ["adjacent_trap"], "evidence": []},
+        {"text": "소프트웨어 관련 전공 학사 이상", "type": "constraint", "gold": "met", "tags": ["degree"],
+         "evidence": ["가상대학교 소프트웨어학과 학사 졸업 (2023.02)"]}
+      ]
+    }
+  ]
+}

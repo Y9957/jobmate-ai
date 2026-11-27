@@ -1,0 +1,36 @@
+{
+  "resume_id": "r4",
+  "resume": "정우진 (가상 인물)\n\n[경력]\n머신러닝 엔지니어 · 가상비전 · 2022.03–2025.05 (3년 2개월)\n- PyTorch로 불량 검출 이미지 분류 모델을 학습해 정확도를 92%까지 올렸습니다.\n- MLflow로 실험 기록과 모델 버전을 관리했습니다.\n- AWS SageMaker로 추론 엔드포인트를 배포했습니다.\n\n[기술]\nPython, PyTorch, OpenCV, MLflow, AWS, Linux\n\n[학력]\n가상대학교 전자공학과 석사 졸업 (2022.02)",
+  "jobs": [
+    {
+      "case_id": "r4_a",
+      "title": "컴퓨터 비전 엔지니어",
+      "requirements": [
+        {"text": "딥러닝 프레임워크 활용 경험", "type": "required", "gold": "met", "tags": ["paraphrase"],
+         "evidence": ["PyTorch로 불량 검출 이미지 분류 모델을 학습해 정확도를 92%까지 올렸습니다.", "Python, PyTorch, OpenCV, MLflow, AWS, Linux"]},
+        {"text": "컴퓨터 비전 모델 개발 경험", "type": "required", "gold": "met", "tags": ["paraphrase"],
+         "evidence": ["PyTorch로 불량 검출 이미지 분류 모델을 학습해 정확도를 92%까지 올렸습니다."]},
+        {"text": "관련 경력 3년 이상", "type": "constraint", "gold": "met", "tags": ["years"],
+         "evidence": ["머신러닝 엔지니어 · 가상비전 · 2022.03–2025.05 (3년 2개월)"]},
+        {"text": "TensorFlow 사용 경험", "type": "preferred", "gold": "not_met", "tags": ["adjacent_trap"], "evidence": []},
+        {"text": "Azure Machine Learning 사용 경험", "type": "preferred", "gold": "not_met", "tags": ["adjacent_trap"], "evidence": []},
+        {"text": "모델 실험 관리 도구 사용 경험", "type": "preferred", "gold": "met", "tags": ["paraphrase"],
+         "evidence": ["MLflow로 실험 기록과 모델 버전을 관리했습니다."]}
+      ]
+    },
+    {
+      "case_id": "r4_b",
+      "title": "LLM 애플리케이션 엔지니어",
+      "requirements": [
+        {"text": "LLM 기반 서비스 개발 경험", "type": "required", "gold": "not_met", "tags": ["absent"], "evidence": []},
+        {"text": "Python 프로그래밍 능력", "type": "required", "gold": "met", "tags": ["direct"],
+         "evidence": ["Python, PyTorch, OpenCV, MLflow, AWS, Linux"]},
+        {"text": "LangChain 사용 경험", "type": "preferred", "gold": "not_met", "tags": ["absent"], "evidence": []},
+        {"text": "클라우드 환경 모델 배포 경험", "type": "preferred", "gold": "met", "tags": ["paraphrase"],
+         "evidence": ["AWS SageMaker로 추론 엔드포인트를 배포했습니다."]},
+        {"text": "석사 이상 학위", "type": "constraint", "gold": "met", "tags": ["degree"],
+         "evidence": ["가상대학교 전자공학과 석사 졸업 (2022.02)"]}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "resume_id": "r1",
+  "resume": "이서준 (가상 인물)\n\n[경력]\n백엔드 개발 인턴 · 가상커머스 · 2025.03–2025.08 (6개월)\n- FastAPI로 주문 조회 API를 개발하고 응답 시간을 30% 줄였습니다.\n- PostgreSQL 인덱스를 설계해 주문 검색 쿼리를 개선했습니다.\n- Docker Compose로 로컬 개발 환경을 구성했습니다.\n\n[프로젝트]\n스터디 매칭 서비스 (개인) · 2024.07–2024.10\n- Django REST Framework로 회원·스터디 API를 만들었습니다.\n- GitHub Actions로 테스트 자동화를 구성했습니다.\n\n[기술]\nPython, FastAPI, Django, PostgreSQL, Docker, Git\n\n[학력]\n가상대학교 컴퓨터공학과 학사 졸업 (2025.02)",
+  "jobs": [
+    {
+      "case_id": "r1_a",
+      "title": "Python 백엔드 개발자 (신입)",
+      "requirements": [
+        {"text": "Python 웹 프레임워크(FastAPI, Django 등) 개발 경험", "type": "required", "gold": "met", "tags": ["direct"],
+         "evidence": ["FastAPI로 주문 조회 API를 개발하고 응답 시간을 30% 줄였습니다.", "Django REST Framework로 회원·스터디 API를 만들었습니다.", "Python, FastAPI, Django, PostgreSQL, Docker, Git"]},
+        {"text": "관계형 데이터베이스 활용 경험", "type": "required", "gold": "met", "tags": ["paraphrase"],
+         "evidence": ["PostgreSQL 인덱스를 설계해 주문 검색 쿼리를 개선했습니다.", "Python, FastAPI, Django, PostgreSQL, Docker, Git"]},
+        {"text": "컴퓨터공학 또는 관련 전공 학사 이상", "type": "constraint", "gold": "met", "tags": ["degree"],
+         "evidence": ["가상대학교 컴퓨터공학과 학사 졸업 (2025.02)"]},
+        {"text": "CI 도구(GitHub Actions, Jenkins 등) 사용 경험", "type": "preferred", "gold": "met", "tags": ["direct"],
+         "evidence": ["GitHub Actions로 테스트 자동화를 구성했습니다."]},
+        {"text": "Redis 등 캐시 활용 경험", "type": "preferred", "gold": "not_met", "tags": ["absent", "tempting_quote"], "evidence": []},
+        {"text": "Kubernetes 운영 경험", "type": "preferred", "gold": "not_met", "tags": ["adjacent_trap"], "evidence": []},
+        {"text": "백엔드 실무 경력 2년 이상", "type": "constraint", "gold": "not_met", "tags": ["years"], "evidence": []}
+      ]
+    },
+    {
+      "case_id": "r1_b",
+      "title": "데이터 엔지니어",
+      "requirements": [
+        {"text": "Apache Spark를 활용한 대용량 데이터 처리 경험", "type": "required", "gold": "not_met", "tags": ["absent"], "evidence": []},
+        {"text": "SQL 작성 능력", "type": "required", "gold": "met", "tags": ["paraphrase"],
+         "evidence": ["PostgreSQL 인덱스를 설계해 주문 검색 쿼리를 개선했습니다."]},
+        {"text": "Python 프로그래밍 능력", "type": "required", "gold": "met", "tags": ["direct"],
+         "evidence": ["Python, FastAPI, Django, PostgreSQL, Docker, Git"]},
+        {"text": "Airflow 등 워크플로 스케줄러 사용 경험", "type": "preferred", "gold": "not_met", "tags": ["adjacent_trap"], "evidence": []},
+        {"text": "Docker 사용 경험", "type": "preferred", "gold": "met", "tags": ["direct"],
+         "evidence": ["Docker Compose로 로컬 개발 환경을 구성했습니다.", "Python, FastAPI, Django, PostgreSQL, Docker, Git"]},
+        {"text": "클라우드(AWS, GCP) 데이터 서비스 사용 경험", "type": "preferred", "gold": "not_met", "tags": ["absent"], "evidence": []}
+      ]
+    }
+  ]
+}

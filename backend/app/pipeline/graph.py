@@ -10,6 +10,10 @@
 * semantic_check is a second model call that only asks whether the quote alone
   supports the requirement. It catches real-but-irrelevant quotes that pass the
   span check (e.g. a Pandas sentence cited as proof of SQL).
+
+Both checks can be switched off (`verify_span`, `verify_semantic`) so the evaluation
+can compare the same prompts with and without verification. With `verify_span=False`
+the span check still records whether each quote exists, but trusts the answer.
 """
 
 from __future__ import annotations
@@ -25,6 +29,7 @@ from app.pipeline.schemas import (
     AnalysisReport,
     Coverage,
     Evidence,
+    ExtractedRequirement,
     JobRequirements,
     MatchBatch,
     SemanticBatch,
@@ -44,7 +49,7 @@ class State(TypedDict, total=False):
     report: AnalysisReport
 
 
-def build_graph(llm: LLMClient, max_attempts: int = 3):
+def build_graph(llm: LLMClient, max_attempts: int = 3, verify_span: bool = True, verify_semantic: bool = True):
     def log(state: State, msg: str) -> list[str]:
         return [*state.get("trace", []), msg]
 
@@ -107,6 +112,8 @@ def build_graph(llm: LLMClient, max_attempts: int = 3):
         }
 
     def span_check(state: State) -> State:
+        if not verify_span:
+            return record_spans_only(state)
         evidence, feedback = dict(state["evidence"]), dict(state.get("feedback", {}))
         still_pending: list[int] = []
         for rid in state["pending"]:
@@ -154,10 +161,25 @@ def build_graph(llm: LLMClient, max_attempts: int = 3):
             "trace": log(state, msg),
         }
 
+    def record_spans_only(state: State) -> State:
+        """Verification off: note whether each quote exists, but keep the model's answer as is."""
+        evidence = dict(state["evidence"])
+        for rid in state["pending"]:
+            e = evidence[rid]
+            evidence[rid] = e.model_copy(
+                update={"span_verified": bool(e.resume_quote) and quote_in_source(e.resume_quote, state["resume_text"])}
+            )
+        return {"evidence": evidence, "pending": [], "feedback": {}, "trace": log(state, "span_check: off (recorded)")}
+
+    def after_prepare(state: State) -> str:
+        return "match" if state.get("evidence") else "parse_job"
+
     def after_span(state: State) -> str:
         return "match" if state["pending"] else "semantic_check"
 
     def semantic_check(state: State) -> State:
+        if not verify_semantic:
+            return {"trace": log(state, "semantic_check: off")}
         evidence = dict(state["evidence"])
         targets = [e for e in evidence.values() if e.verdict == "met" and e.span_verified]
         if not targets:
@@ -225,7 +247,7 @@ def build_graph(llm: LLMClient, max_attempts: int = 3):
     ]:
         g.add_node(name, fn)
     g.add_edge(START, "prepare")
-    g.add_edge("prepare", "parse_job")
+    g.add_conditional_edges("prepare", after_prepare, {"parse_job": "parse_job", "match": "match"})
     g.add_edge("parse_job", "match")
     g.add_edge("match", "span_check")
     g.add_conditional_edges("span_check", after_span, {"match": "match", "semantic_check": "semantic_check"})
@@ -237,4 +259,31 @@ def build_graph(llm: LLMClient, max_attempts: int = 3):
 def run_analysis(resume_text: str, job_text: str, llm: LLMClient, max_attempts: int = 3) -> AnalysisReport:
     graph = build_graph(llm, max_attempts)
     final = graph.invoke({"resume_text": resume_text, "job_text": job_text})
+    return final["report"]
+
+
+def run_matching(
+    resume_text: str,
+    requirements: list[ExtractedRequirement],
+    llm: LLMClient,
+    max_attempts: int = 3,
+    verify_span: bool = True,
+    verify_semantic: bool = True,
+) -> AnalysisReport:
+    """Skip job parsing and judge a fixed list of requirements (used by the evaluation)."""
+    evidence = {
+        i: Evidence(
+            requirement_id=i,
+            requirement=r.text,
+            requirement_type=r.type,
+            job_quote=r.job_quote,
+            job_quote_verified=True,
+            verdict="insufficient",
+        )
+        for i, r in enumerate(requirements, start=1)
+    }
+    graph = build_graph(llm, max_attempts, verify_span, verify_semantic)
+    final = graph.invoke(
+        {"resume_text": resume_text, "evidence": evidence, "pending": list(evidence), "feedback": {}, "attempts": 0}
+    )
     return final["report"]

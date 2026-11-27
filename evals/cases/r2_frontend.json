@@ -1,0 +1,35 @@
+{
+  "resume_id": "r2",
+  "resume": "박하은 (가상 인물)\n\n[경력]\n프론트엔드 개발자 · 가상핀테크 · 2023.01–2025.06 (2년 6개월)\n- React와 TypeScript로 송금 화면을 개발하고 번들 크기를 25% 줄였습니다.\n- Next.js로 마케팅 페이지를 서버 사이드 렌더링으로 전환했습니다.\n- Jest와 React Testing Library로 컴포넌트 테스트를 작성했습니다.\n\n[프로젝트]\n일정 공유 앱 (개인) · 2022.06–2022.09\n- JavaScript와 Firebase로 웹 앱을 만들었습니다.\n\n[기술]\nJavaScript, TypeScript, React, Next.js, Jest, Figma\n\n[학력]\n가상대학교 시각디자인학과 학사 졸업 (2022.02)",
+  "jobs": [
+    {
+      "case_id": "r2_a",
+      "title": "프론트엔드 개발자 (경력)",
+      "requirements": [
+        {"text": "React 기반 웹 개발 경험", "type": "required", "gold": "met", "tags": ["direct"],
+         "evidence": ["React와 TypeScript로 송금 화면을 개발하고 번들 크기를 25% 줄였습니다.", "JavaScript, TypeScript, React, Next.js, Jest, Figma"]},
+        {"text": "TypeScript 사용 경험", "type": "required", "gold": "met", "tags": ["direct"],
+         "evidence": ["React와 TypeScript로 송금 화면을 개발하고 번들 크기를 25% 줄였습니다.", "JavaScript, TypeScript, React, Next.js, Jest, Figma"]},
+        {"text": "프론트엔드 실무 경력 2년 이상", "type": "constraint", "gold": "met", "tags": ["years"],
+         "evidence": ["프론트엔드 개발자 · 가상핀테크 · 2023.01–2025.06 (2년 6개월)"]},
+        {"text": "React Native 앱 개발 경험", "type": "preferred", "gold": "not_met", "tags": ["adjacent_trap"], "evidence": []},
+        {"text": "프론트엔드 테스트 코드 작성 경험", "type": "preferred", "gold": "met", "tags": ["paraphrase"],
+         "evidence": ["Jest와 React Testing Library로 컴포넌트 테스트를 작성했습니다."]},
+        {"text": "웹 접근성 개선 경험", "type": "preferred", "gold": "not_met", "tags": ["absent"], "evidence": []}
+      ]
+    },
+    {
+      "case_id": "r2_b",
+      "title": "Java 백엔드 개발자",
+      "requirements": [
+        {"text": "Java 기반 서버 개발 경험", "type": "required", "gold": "not_met", "tags": ["adjacent_trap"], "evidence": []},
+        {"text": "Spring Framework 사용 경험", "type": "required", "gold": "not_met", "tags": ["absent"], "evidence": []},
+        {"text": "컴퓨터공학 또는 관련 전공 학사 이상", "type": "constraint", "gold": "not_met", "tags": ["degree"], "evidence": []},
+        {"text": "TypeScript 사용 경험", "type": "preferred", "gold": "met", "tags": ["direct"],
+         "evidence": ["React와 TypeScript로 송금 화면을 개발하고 번들 크기를 25% 줄였습니다.", "JavaScript, TypeScript, React, Next.js, Jest, Figma"]},
+        {"text": "Firebase 등 BaaS 사용 경험", "type": "preferred", "gold": "met", "tags": ["direct"],
+         "evidence": ["JavaScript와 Firebase로 웹 앱을 만들었습니다."]}
+      ]
+    }
+  ]
+}

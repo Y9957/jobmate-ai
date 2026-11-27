@@ -1,0 +1,35 @@
+{
+  "resume_id": "r3",
+  "resume": "최민지 (가상 인물)\n\n[경력]\n데이터 분석가 · 가상리테일 · 2024.02–2025.07 (1년 6개월)\n- SQL로 매장별 매출 대시보드용 데이터 마트를 만들었습니다.\n- Tableau로 경영진 주간 리포트 대시보드를 운영했습니다.\n- A/B 테스트를 설계하고 t-검정으로 전환율 차이를 검증했습니다.\n\n[프로젝트]\n고객 이탈 예측 (팀 프로젝트) · 2023.09–2023.12\n- Python과 scikit-learn으로 로지스틱 회귀 모델을 만들었습니다.\n\n[기술]\nSQL, Python, Pandas, Tableau, Excel\n\n[학력]\n가상대학교 통계학과 학사 졸업 (2024.02)\n\n[자격증]\nADsP",
+  "jobs": [
+    {
+      "case_id": "r3_a",
+      "title": "데이터 분석가",
+      "requirements": [
+        {"text": "SQL을 이용한 데이터 추출·가공 능력", "type": "required", "gold": "met", "tags": ["direct"],
+         "evidence": ["SQL로 매장별 매출 대시보드용 데이터 마트를 만들었습니다.", "SQL, Python, Pandas, Tableau, Excel"]},
+        {"text": "BI 도구(Tableau, Power BI 등) 사용 경험", "type": "required", "gold": "met", "tags": ["direct"],
+         "evidence": ["Tableau로 경영진 주간 리포트 대시보드를 운영했습니다.", "SQL, Python, Pandas, Tableau, Excel"]},
+        {"text": "통계적 가설 검정 지식", "type": "required", "gold": "met", "tags": ["paraphrase"],
+         "evidence": ["A/B 테스트를 설계하고 t-검정으로 전환율 차이를 검증했습니다."]},
+        {"text": "Power BI 사용 경험", "type": "preferred", "gold": "not_met", "tags": ["adjacent_trap"], "evidence": []},
+        {"text": "SQLD 자격증 보유", "type": "preferred", "gold": "not_met", "tags": ["adjacent_trap"], "evidence": []},
+        {"text": "머신러닝 모델링 경험", "type": "preferred", "gold": "met", "tags": ["paraphrase"],
+         "evidence": ["Python과 scikit-learn으로 로지스틱 회귀 모델을 만들었습니다."]}
+      ]
+    },
+    {
+      "case_id": "r3_b",
+      "title": "머신러닝 엔지니어",
+      "requirements": [
+        {"text": "딥러닝 프레임워크(PyTorch, TensorFlow) 사용 경험", "type": "required", "gold": "not_met", "tags": ["adjacent_trap"], "evidence": []},
+        {"text": "Python 프로그래밍 능력", "type": "required", "gold": "met", "tags": ["direct"],
+         "evidence": ["Python과 scikit-learn으로 로지스틱 회귀 모델을 만들었습니다.", "SQL, Python, Pandas, Tableau, Excel"]},
+        {"text": "석사 이상 학위", "type": "constraint", "gold": "not_met", "tags": ["degree"], "evidence": []},
+        {"text": "MLOps 도구(MLflow 등) 사용 경험", "type": "preferred", "gold": "not_met", "tags": ["absent"], "evidence": []},
+        {"text": "A/B 테스트 설계 경험", "type": "preferred", "gold": "met", "tags": ["direct"],
+         "evidence": ["A/B 테스트를 설계하고 t-검정으로 전환율 차이를 검증했습니다."]}
+      ]
+    }
+  ]
+}

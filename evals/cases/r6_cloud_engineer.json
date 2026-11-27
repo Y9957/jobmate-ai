@@ -1,0 +1,38 @@
+{
+  "resume_id": "r6",
+  "resume": "오세린 (가상 인물)\n\n[경력]\n클라우드 엔지니어 · 가상게임즈 · 2021.04–2025.04 (4년)\n- Terraform으로 AWS 인프라(VPC, ECS, RDS)를 코드로 관리했습니다.\n- GitHub Actions로 ECS 무중단 배포 파이프라인을 만들었습니다.\n- CloudWatch 경보와 대시보드로 서비스 모니터링 체계를 구축했습니다.\n\n[기술]\nAWS, Terraform, Docker, GitHub Actions, Linux, Bash\n\n[자격증]\nAWS Certified Solutions Architect – Associate",
+  "jobs": [
+    {
+      "case_id": "r6_a",
+      "title": "클라우드 엔지니어 (경력)",
+      "requirements": [
+        {"text": "AWS 운영 경험", "type": "required", "gold": "met", "tags": ["direct"],
+         "evidence": ["Terraform으로 AWS 인프라(VPC, ECS, RDS)를 코드로 관리했습니다."]},
+        {"text": "IaC 도구(Terraform 등) 사용 경험", "type": "required", "gold": "met", "tags": ["direct"],
+         "evidence": ["Terraform으로 AWS 인프라(VPC, ECS, RDS)를 코드로 관리했습니다.", "AWS, Terraform, Docker, GitHub Actions, Linux, Bash"]},
+        {"text": "배포 자동화 파이프라인 구축 경험", "type": "required", "gold": "met", "tags": ["paraphrase"],
+         "evidence": ["GitHub Actions로 ECS 무중단 배포 파이프라인을 만들었습니다."]},
+        {"text": "Kubernetes 운영 경험", "type": "preferred", "gold": "not_met", "tags": ["adjacent_trap"], "evidence": []},
+        {"text": "GCP 사용 경험", "type": "preferred", "gold": "not_met", "tags": ["adjacent_trap"], "evidence": []},
+        {"text": "클라우드 관련 경력 3년 이상", "type": "constraint", "gold": "met", "tags": ["years"],
+         "evidence": ["클라우드 엔지니어 · 가상게임즈 · 2021.04–2025.04 (4년)"]},
+        {"text": "AWS 자격증 보유", "type": "preferred", "gold": "met", "tags": ["direct"],
+         "evidence": ["AWS Certified Solutions Architect – Associate"]}
+      ]
+    },
+    {
+      "case_id": "r6_b",
+      "title": "서버 운영 엔지니어",
+      "requirements": [
+        {"text": "학사 이상 학위", "type": "constraint", "gold": "not_met", "tags": ["no_info", "degree"], "evidence": []},
+        {"text": "Linux 서버 사용 능력", "type": "required", "gold": "met", "tags": ["direct"],
+         "evidence": ["AWS, Terraform, Docker, GitHub Actions, Linux, Bash"]},
+        {"text": "모니터링 체계 구축 경험", "type": "required", "gold": "met", "tags": ["direct"],
+         "evidence": ["CloudWatch 경보와 대시보드로 서비스 모니터링 체계를 구축했습니다."]},
+        {"text": "Ansible 사용 경험", "type": "preferred", "gold": "not_met", "tags": ["absent"], "evidence": []},
+        {"text": "Docker 사용 경험", "type": "preferred", "gold": "met", "tags": ["direct"],
+         "evidence": ["AWS, Terraform, Docker, GitHub Actions, Linux, Bash"]}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2799 @@
+{
+  "model": "ollama:qwen3:8b",
+  "prompt_version": "v2",
+  "cases": 12,
+  "results": [
+    {
+      "system": "baseline",
+      "label": "A. 검증 없음 (단일 매칭 결과를 그대로 신뢰)",
+      "summary": {
+        "items": 69,
+        "predicted_met": 40,
+        "unsupported_met_rate": 0.0,
+        "fabricated_quote_rate": 0.0,
+        "false_met_rate": 0.0,
+        "met_recall": 1.0,
+        "verdict_accuracy": 1.0,
+        "false_met_by_tag": {
+          "absent": "0/12",
+          "adjacent_trap": "0/12",
+          "degree": "0/3",
+          "no_info": "0/1",
+          "tempting_quote": "0/2",
+          "years": "0/2"
+        },
+        "outcomes": {
+          "correct_met": 40,
+          "correct_not": 29
+        }
+      },
+      "llm_calls": 12,
+      "seconds": 79.3,
+      "items": [
+        {
+          "case_id": "r1_a",
+          "requirement": "Python 웹 프레임워크(FastAPI, Django 등) 개발 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Django REST Framework로 회원·스터디 API를 만들었습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r1_a",
+          "requirement": "관계형 데이터베이스 활용 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "PostgreSQL 인덱스를 설계해 주문 검색 쿼리를 개선했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r1_a",
+          "requirement": "컴퓨터공학 또는 관련 전공 학사 이상",
+          "tags": [
+            "degree"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "가상대학교 컴퓨터공학과 학사 졸업 (2025.02)",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r1_a",
+          "requirement": "CI 도구(GitHub Actions, Jenkins 등) 사용 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "GitHub Actions로 테스트 자동화를 구성했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r1_a",
+          "requirement": "Redis 등 캐시 활용 경험",
+          "tags": [
+            "absent",
+            "tempting_quote"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r1_a",
+          "requirement": "Kubernetes 운영 경험",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r1_a",
+          "requirement": "백엔드 실무 경력 2년 이상",
+          "tags": [
+            "years"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r1_b",
+          "requirement": "Apache Spark를 활용한 대용량 데이터 처리 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r1_b",
+          "requirement": "SQL 작성 능력",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "PostgreSQL 인덱스를 설계해 주문 검색 쿼리를 개선했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r1_b",
+          "requirement": "Python 프로그래밍 능력",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Python, FastAPI, Django, PostgreSQL, Docker, Git",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r1_b",
+          "requirement": "Airflow 등 워크플로 스케줄러 사용 경험",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "insufficient",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r1_b",
+          "requirement": "Docker 사용 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Docker Compose로 로컬 개발 환경을 구성했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r1_b",
+          "requirement": "클라우드(AWS, GCP) 데이터 서비스 사용 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r2_a",
+          "requirement": "React 기반 웹 개발 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "React와 TypeScript로 송금 화면을 개발하고 번들 크기를 25% 줄였습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r2_a",
+          "requirement": "TypeScript 사용 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "React와 TypeScript로 송금 화면을 개발하고 번들 크기를 25% 줄였습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r2_a",
+          "requirement": "프론트엔드 실무 경력 2년 이상",
+          "tags": [
+            "years"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "프론트엔드 개발자 · 가상핀테크 · 2023.01–2025.06 (2년 6개월)",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r2_a",
+          "requirement": "React Native 앱 개발 경험",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r2_a",
+          "requirement": "프론트엔드 테스트 코드 작성 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Jest와 React Testing Library로 컴포넌트 테스트를 작성했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r2_a",
+          "requirement": "웹 접근성 개선 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "insufficient",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r2_b",
+          "requirement": "Java 기반 서버 개발 경험",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r2_b",
+          "requirement": "Spring Framework 사용 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r2_b",
+          "requirement": "컴퓨터공학 또는 관련 전공 학사 이상",
+          "tags": [
+            "degree"
+          ],
+          "gold": "not_met",
+          "verdict": "insufficient",
+          "quote": "가상대학교 시각디자인학과 학사 졸업 (2022.02)",
+          "quote_exists": true,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r2_b",
+          "requirement": "TypeScript 사용 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "TypeScript",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r2_b",
+          "requirement": "Firebase 등 BaaS 사용 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Firebase로 웹 앱을 만들었습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r3_a",
+          "requirement": "SQL을 이용한 데이터 추출·가공 능력",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "SQL로 매장별 매출 대시보드용 데이터 마트를 만들었습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r3_a",
+          "requirement": "BI 도구(Tableau, Power BI 등) 사용 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Tableau로 경영진 주간 리포트 대시보드를 운영했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r3_a",
+          "requirement": "통계적 가설 검정 지식",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "A/B 테스트를 설계하고 t-검정으로 전환율 차이를 검증했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r3_a",
+          "requirement": "Power BI 사용 경험",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r3_a",
+          "requirement": "SQLD 자격증 보유",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r3_a",
+          "requirement": "머신러닝 모델링 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Python과 scikit-learn으로 로지스틱 회귀 모델을 만들었습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r3_b",
+          "requirement": "딥러닝 프레임워크(PyTorch, TensorFlow) 사용 경험",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r3_b",
+          "requirement": "Python 프로그래밍 능력",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Python과 scikit-learn으로 로지스틱 회귀 모델을 만들었습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r3_b",
+          "requirement": "석사 이상 학위",
+          "tags": [
+            "degree"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r3_b",
+          "requirement": "MLOps 도구(MLflow 등) 사용 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r3_b",
+          "requirement": "A/B 테스트 설계 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "A/B 테스트를 설계하고 t-검정으로 전환율 차이를 검증했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r4_a",
+          "requirement": "딥러닝 프레임워크 활용 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "PyTorch로 불량 검출 이미지 분류 모델을 학습해 정확도를 92%까지 올렸습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r4_a",
+          "requirement": "컴퓨터 비전 모델 개발 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "PyTorch로 불량 검출 이미지 분류 모델을 학습해 정확도를 92%까지 올렸습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r4_a",
+          "requirement": "관련 경력 3년 이상",
+          "tags": [
+            "years"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "머신러닝 엔지니어 · 가상비전 · 2022.03–2025.05 (3년 2개월)",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r4_a",
+          "requirement": "TensorFlow 사용 경험",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r4_a",
+          "requirement": "Azure Machine Learning 사용 경험",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r4_a",
+          "requirement": "모델 실험 관리 도구 사용 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "MLflow로 실험 기록과 모델 버전을 관리했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r4_b",
+          "requirement": "LLM 기반 서비스 개발 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r4_b",
+          "requirement": "Python 프로그래밍 능력",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Python, PyTorch, OpenCV, MLflow, AWS, Linux",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r4_b",
+          "requirement": "LangChain 사용 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r4_b",
+          "requirement": "클라우드 환경 모델 배포 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "AWS SageMaker로 추론 엔드포인트를 배포했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r4_b",
+          "requirement": "석사 이상 학위",
+          "tags": [
+            "degree"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "가상대학교 전자공학과 석사 졸업 (2022.02)",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r5_a",
+          "requirement": "Java·Spring Boot 기반 서버 개발 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Spring Boot와 JPA로 배송 추적 API를 개발했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r5_a",
+          "requirement": "RDBMS 쿼리 튜닝 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "MySQL 슬로우 쿼리를 분석해 인덱스를 추가했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r5_a",
+          "requirement": "백엔드 개발 경력 3년 이상",
+          "tags": [
+            "years"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r5_a",
+          "requirement": "Kotlin 사용 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "insufficient",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r5_a",
+          "requirement": "캐시 시스템 활용 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Redis 캐시를 도입해 조회 API 응답 시간을 절반으로 줄였습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r5_a",
+          "requirement": "Kafka 등 메시지 큐 사용 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r5_b",
+          "requirement": "Python 기반 서버 개발 경험",
+          "tags": [
+            "absent",
+            "tempting_quote"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r5_b",
+          "requirement": "Git 사용 능력",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Git",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r5_b",
+          "requirement": "Spring Boot 사용 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Spring Boot",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r5_b",
+          "requirement": "MongoDB 사용 경험",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "insufficient",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r5_b",
+          "requirement": "소프트웨어 관련 전공 학사 이상",
+          "tags": [
+            "degree"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "가상대학교 소프트웨어학과 학사 졸업 (2023.02)",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r6_a",
+          "requirement": "AWS 운영 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Terraform으로 AWS 인프라(VPC, ECS, RDS)를 코드로 관리했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r6_a",
+          "requirement": "IaC 도구(Terraform 등) 사용 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Terraform으로 AWS 인프라(VPC, ECS, RDS)를 코드로 관리했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r6_a",
+          "requirement": "배포 자동화 파이프라인 구축 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "GitHub Actions로 ECS 무중단 배포 파이프라인을 만들었습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r6_a",
+          "requirement": "Kubernetes 운영 경험",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r6_a",
+          "requirement": "GCP 사용 경험",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r6_a",
+          "requirement": "클라우드 관련 경력 3년 이상",
+          "tags": [
+            "years"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "클라우드 엔지니어 · 가상게임즈 · 2021.04–2025.04 (4년)",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r6_a",
+          "requirement": "AWS 자격증 보유",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "AWS Certified Solutions Architect – Associate",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r6_b",
+          "requirement": "학사 이상 학위",
+          "tags": [
+            "no_info",
+            "degree"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r6_b",
+          "requirement": "Linux 서버 사용 능력",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Linux, Bash",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r6_b",
+          "requirement": "모니터링 체계 구축 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "CloudWatch 경보와 대시보드로 서비스 모니터링 체계를 구축했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r6_b",
+          "requirement": "Ansible 사용 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r6_b",
+          "requirement": "Docker 사용 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Docker",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        }
+      ]
+    },
+    {
+      "system": "span",
+      "label": "B. 원문 대조 + 재시도",
+      "summary": {
+        "items": 69,
+        "predicted_met": 40,
+        "unsupported_met_rate": 0.0,
+        "fabricated_quote_rate": 0.0,
+        "false_met_rate": 0.0,
+        "met_recall": 1.0,
+        "verdict_accuracy": 1.0,
+        "false_met_by_tag": {
+          "absent": "0/12",
+          "adjacent_trap": "0/12",
+          "degree": "0/3",
+          "no_info": "0/1",
+          "tempting_quote": "0/2",
+          "years": "0/2"
+        },
+        "outcomes": {
+          "correct_met": 40,
+          "correct_not": 29
+        }
+      },
+      "llm_calls": 12,
+      "seconds": 78.2,
+      "items": [
+        {
+          "case_id": "r1_a",
+          "requirement": "Python 웹 프레임워크(FastAPI, Django 등) 개발 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Django REST Framework로 회원·스터디 API를 만들었습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r1_a",
+          "requirement": "관계형 데이터베이스 활용 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "PostgreSQL 인덱스를 설계해 주문 검색 쿼리를 개선했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r1_a",
+          "requirement": "컴퓨터공학 또는 관련 전공 학사 이상",
+          "tags": [
+            "degree"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "가상대학교 컴퓨터공학과 학사 졸업 (2025.02)",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r1_a",
+          "requirement": "CI 도구(GitHub Actions, Jenkins 등) 사용 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "GitHub Actions로 테스트 자동화를 구성했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r1_a",
+          "requirement": "Redis 등 캐시 활용 경험",
+          "tags": [
+            "absent",
+            "tempting_quote"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r1_a",
+          "requirement": "Kubernetes 운영 경험",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r1_a",
+          "requirement": "백엔드 실무 경력 2년 이상",
+          "tags": [
+            "years"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r1_b",
+          "requirement": "Apache Spark를 활용한 대용량 데이터 처리 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r1_b",
+          "requirement": "SQL 작성 능력",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "PostgreSQL 인덱스를 설계해 주문 검색 쿼리를 개선했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r1_b",
+          "requirement": "Python 프로그래밍 능력",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Python, FastAPI, Django, PostgreSQL, Docker, Git",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r1_b",
+          "requirement": "Airflow 등 워크플로 스케줄러 사용 경험",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "insufficient",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r1_b",
+          "requirement": "Docker 사용 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Docker Compose로 로컬 개발 환경을 구성했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r1_b",
+          "requirement": "클라우드(AWS, GCP) 데이터 서비스 사용 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r2_a",
+          "requirement": "React 기반 웹 개발 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "React와 TypeScript로 송금 화면을 개발하고 번들 크기를 25% 줄였습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r2_a",
+          "requirement": "TypeScript 사용 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "React와 TypeScript로 송금 화면을 개발하고 번들 크기를 25% 줄였습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r2_a",
+          "requirement": "프론트엔드 실무 경력 2년 이상",
+          "tags": [
+            "years"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "프론트엔드 개발자 · 가상핀테크 · 2023.01–2025.06 (2년 6개월)",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r2_a",
+          "requirement": "React Native 앱 개발 경험",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r2_a",
+          "requirement": "프론트엔드 테스트 코드 작성 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Jest와 React Testing Library로 컴포넌트 테스트를 작성했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r2_a",
+          "requirement": "웹 접근성 개선 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "insufficient",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r2_b",
+          "requirement": "Java 기반 서버 개발 경험",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r2_b",
+          "requirement": "Spring Framework 사용 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r2_b",
+          "requirement": "컴퓨터공학 또는 관련 전공 학사 이상",
+          "tags": [
+            "degree"
+          ],
+          "gold": "not_met",
+          "verdict": "insufficient",
+          "quote": "가상대학교 시각디자인학과 학사 졸업 (2022.02)",
+          "quote_exists": true,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r2_b",
+          "requirement": "TypeScript 사용 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "TypeScript",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r2_b",
+          "requirement": "Firebase 등 BaaS 사용 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Firebase로 웹 앱을 만들었습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r3_a",
+          "requirement": "SQL을 이용한 데이터 추출·가공 능력",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "SQL로 매장별 매출 대시보드용 데이터 마트를 만들었습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r3_a",
+          "requirement": "BI 도구(Tableau, Power BI 등) 사용 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Tableau로 경영진 주간 리포트 대시보드를 운영했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r3_a",
+          "requirement": "통계적 가설 검정 지식",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "A/B 테스트를 설계하고 t-검정으로 전환율 차이를 검증했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r3_a",
+          "requirement": "Power BI 사용 경험",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r3_a",
+          "requirement": "SQLD 자격증 보유",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r3_a",
+          "requirement": "머신러닝 모델링 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Python과 scikit-learn으로 로지스틱 회귀 모델을 만들었습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r3_b",
+          "requirement": "딥러닝 프레임워크(PyTorch, TensorFlow) 사용 경험",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r3_b",
+          "requirement": "Python 프로그래밍 능력",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Python과 scikit-learn으로 로지스틱 회귀 모델을 만들었습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r3_b",
+          "requirement": "석사 이상 학위",
+          "tags": [
+            "degree"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r3_b",
+          "requirement": "MLOps 도구(MLflow 등) 사용 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "insufficient",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r3_b",
+          "requirement": "A/B 테스트 설계 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "A/B 테스트를 설계하고 t-검정으로 전환율 차이를 검증했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r4_a",
+          "requirement": "딥러닝 프레임워크 활용 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "PyTorch로 불량 검출 이미지 분류 모델을 학습해 정확도를 92%까지 올렸습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r4_a",
+          "requirement": "컴퓨터 비전 모델 개발 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "PyTorch로 불량 검출 이미지 분류 모델을 학습해 정확도를 92%까지 올렸습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r4_a",
+          "requirement": "관련 경력 3년 이상",
+          "tags": [
+            "years"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "머신러닝 엔지니어 · 가상비전 · 2022.03–2025.05 (3년 2개월)",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r4_a",
+          "requirement": "TensorFlow 사용 경험",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r4_a",
+          "requirement": "Azure Machine Learning 사용 경험",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r4_a",
+          "requirement": "모델 실험 관리 도구 사용 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "MLflow로 실험 기록과 모델 버전을 관리했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r4_b",
+          "requirement": "LLM 기반 서비스 개발 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r4_b",
+          "requirement": "Python 프로그래밍 능력",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Python, PyTorch, OpenCV, MLflow, AWS, Linux",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r4_b",
+          "requirement": "LangChain 사용 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r4_b",
+          "requirement": "클라우드 환경 모델 배포 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "AWS SageMaker로 추론 엔드포인트를 배포했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r4_b",
+          "requirement": "석사 이상 학위",
+          "tags": [
+            "degree"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "가상대학교 전자공학과 석사 졸업 (2022.02)",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r5_a",
+          "requirement": "Java·Spring Boot 기반 서버 개발 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Spring Boot와 JPA로 배송 추적 API를 개발했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r5_a",
+          "requirement": "RDBMS 쿼리 튜닝 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "MySQL 슬로우 쿼리를 분석해 인덱스를 추가했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r5_a",
+          "requirement": "백엔드 개발 경력 3년 이상",
+          "tags": [
+            "years"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r5_a",
+          "requirement": "Kotlin 사용 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "insufficient",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r5_a",
+          "requirement": "캐시 시스템 활용 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Redis 캐시를 도입해 조회 API 응답 시간을 절반으로 줄였습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r5_a",
+          "requirement": "Kafka 등 메시지 큐 사용 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r5_b",
+          "requirement": "Python 기반 서버 개발 경험",
+          "tags": [
+            "absent",
+            "tempting_quote"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r5_b",
+          "requirement": "Git 사용 능력",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Git",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r5_b",
+          "requirement": "Spring Boot 사용 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Spring Boot",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r5_b",
+          "requirement": "MongoDB 사용 경험",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "insufficient",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r5_b",
+          "requirement": "소프트웨어 관련 전공 학사 이상",
+          "tags": [
+            "degree"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "가상대학교 소프트웨어학과 학사 졸업 (2023.02)",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r6_a",
+          "requirement": "AWS 운영 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Terraform으로 AWS 인프라(VPC, ECS, RDS)를 코드로 관리했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r6_a",
+          "requirement": "IaC 도구(Terraform 등) 사용 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Terraform으로 AWS 인프라(VPC, ECS, RDS)를 코드로 관리했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r6_a",
+          "requirement": "배포 자동화 파이프라인 구축 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "GitHub Actions로 ECS 무중단 배포 파이프라인을 만들었습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r6_a",
+          "requirement": "Kubernetes 운영 경험",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r6_a",
+          "requirement": "GCP 사용 경험",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r6_a",
+          "requirement": "클라우드 관련 경력 3년 이상",
+          "tags": [
+            "years"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "클라우드 엔지니어 · 가상게임즈 · 2021.04–2025.04 (4년)",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r6_a",
+          "requirement": "AWS 자격증 보유",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "AWS Certified Solutions Architect – Associate",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r6_b",
+          "requirement": "학사 이상 학위",
+          "tags": [
+            "no_info",
+            "degree"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r6_b",
+          "requirement": "Linux 서버 사용 능력",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Linux, Bash",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r6_b",
+          "requirement": "모니터링 체계 구축 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "CloudWatch 경보와 대시보드로 서비스 모니터링 체계를 구축했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r6_b",
+          "requirement": "Ansible 사용 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r6_b",
+          "requirement": "Docker 사용 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Docker",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        }
+      ]
+    },
+    {
+      "system": "full",
+      "label": "C. 원문 대조 + 재시도 + 의미 검증",
+      "summary": {
+        "items": 69,
+        "predicted_met": 38,
+        "unsupported_met_rate": 0.0,
+        "fabricated_quote_rate": 0.0,
+        "false_met_rate": 0.0,
+        "met_recall": 0.95,
+        "verdict_accuracy": 0.971,
+        "false_met_by_tag": {
+          "absent": "0/12",
+          "adjacent_trap": "0/12",
+          "degree": "0/3",
+          "no_info": "0/1",
+          "tempting_quote": "0/2",
+          "years": "0/2"
+        },
+        "outcomes": {
+          "correct_met": 38,
+          "correct_not": 29,
+          "missed_met": 2
+        }
+      },
+      "llm_calls": 24,
+      "seconds": 122.2,
+      "items": [
+        {
+          "case_id": "r1_a",
+          "requirement": "Python 웹 프레임워크(FastAPI, Django 등) 개발 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Django REST Framework로 회원·스터디 API를 만들었습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r1_a",
+          "requirement": "관계형 데이터베이스 활용 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "PostgreSQL 인덱스를 설계해 주문 검색 쿼리를 개선했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r1_a",
+          "requirement": "컴퓨터공학 또는 관련 전공 학사 이상",
+          "tags": [
+            "degree"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "가상대학교 컴퓨터공학과 학사 졸업 (2025.02)",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r1_a",
+          "requirement": "CI 도구(GitHub Actions, Jenkins 등) 사용 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "GitHub Actions로 테스트 자동화를 구성했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r1_a",
+          "requirement": "Redis 등 캐시 활용 경험",
+          "tags": [
+            "absent",
+            "tempting_quote"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r1_a",
+          "requirement": "Kubernetes 운영 경험",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r1_a",
+          "requirement": "백엔드 실무 경력 2년 이상",
+          "tags": [
+            "years"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r1_b",
+          "requirement": "Apache Spark를 활용한 대용량 데이터 처리 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r1_b",
+          "requirement": "SQL 작성 능력",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "PostgreSQL 인덱스를 설계해 주문 검색 쿼리를 개선했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r1_b",
+          "requirement": "Python 프로그래밍 능력",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Python, FastAPI, Django, PostgreSQL, Docker, Git",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r1_b",
+          "requirement": "Airflow 등 워크플로 스케줄러 사용 경험",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "insufficient",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r1_b",
+          "requirement": "Docker 사용 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Docker Compose로 로컬 개발 환경을 구성했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r1_b",
+          "requirement": "클라우드(AWS, GCP) 데이터 서비스 사용 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r2_a",
+          "requirement": "React 기반 웹 개발 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "React와 TypeScript로 송금 화면을 개발하고 번들 크기를 25% 줄였습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r2_a",
+          "requirement": "TypeScript 사용 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "React와 TypeScript로 송금 화면을 개발하고 번들 크기를 25% 줄였습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r2_a",
+          "requirement": "프론트엔드 실무 경력 2년 이상",
+          "tags": [
+            "years"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "프론트엔드 개발자 · 가상핀테크 · 2023.01–2025.06 (2년 6개월)",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r2_a",
+          "requirement": "React Native 앱 개발 경험",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r2_a",
+          "requirement": "프론트엔드 테스트 코드 작성 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Jest와 React Testing Library로 컴포넌트 테스트를 작성했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r2_a",
+          "requirement": "웹 접근성 개선 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "insufficient",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r2_b",
+          "requirement": "Java 기반 서버 개발 경험",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r2_b",
+          "requirement": "Spring Framework 사용 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r2_b",
+          "requirement": "컴퓨터공학 또는 관련 전공 학사 이상",
+          "tags": [
+            "degree"
+          ],
+          "gold": "not_met",
+          "verdict": "insufficient",
+          "quote": "가상대학교 시각디자인학과 학사 졸업 (2022.02)",
+          "quote_exists": true,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r2_b",
+          "requirement": "TypeScript 사용 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "TypeScript",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r2_b",
+          "requirement": "Firebase 등 BaaS 사용 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Firebase로 웹 앱을 만들었습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r3_a",
+          "requirement": "SQL을 이용한 데이터 추출·가공 능력",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "SQL로 매장별 매출 대시보드용 데이터 마트를 만들었습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r3_a",
+          "requirement": "BI 도구(Tableau, Power BI 등) 사용 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Tableau로 경영진 주간 리포트 대시보드를 운영했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r3_a",
+          "requirement": "통계적 가설 검정 지식",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "A/B 테스트를 설계하고 t-검정으로 전환율 차이를 검증했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r3_a",
+          "requirement": "Power BI 사용 경험",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r3_a",
+          "requirement": "SQLD 자격증 보유",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r3_a",
+          "requirement": "머신러닝 모델링 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Python과 scikit-learn으로 로지스틱 회귀 모델을 만들었습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r3_b",
+          "requirement": "딥러닝 프레임워크(PyTorch, TensorFlow) 사용 경험",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r3_b",
+          "requirement": "Python 프로그래밍 능력",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Python과 scikit-learn으로 로지스틱 회귀 모델을 만들었습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r3_b",
+          "requirement": "석사 이상 학위",
+          "tags": [
+            "degree"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r3_b",
+          "requirement": "MLOps 도구(MLflow 등) 사용 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "insufficient",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r3_b",
+          "requirement": "A/B 테스트 설계 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "A/B 테스트를 설계하고 t-검정으로 전환율 차이를 검증했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r4_a",
+          "requirement": "딥러닝 프레임워크 활용 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "PyTorch로 불량 검출 이미지 분류 모델을 학습해 정확도를 92%까지 올렸습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r4_a",
+          "requirement": "컴퓨터 비전 모델 개발 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "PyTorch로 불량 검출 이미지 분류 모델을 학습해 정확도를 92%까지 올렸습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r4_a",
+          "requirement": "관련 경력 3년 이상",
+          "tags": [
+            "years"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "머신러닝 엔지니어 · 가상비전 · 2022.03–2025.05 (3년 2개월)",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r4_a",
+          "requirement": "TensorFlow 사용 경험",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r4_a",
+          "requirement": "Azure Machine Learning 사용 경험",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r4_a",
+          "requirement": "모델 실험 관리 도구 사용 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "MLflow로 실험 기록과 모델 버전을 관리했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r4_b",
+          "requirement": "LLM 기반 서비스 개발 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r4_b",
+          "requirement": "Python 프로그래밍 능력",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Python, PyTorch, OpenCV, MLflow, AWS, Linux",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r4_b",
+          "requirement": "LangChain 사용 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r4_b",
+          "requirement": "클라우드 환경 모델 배포 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "AWS SageMaker로 추론 엔드포인트를 배포했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r4_b",
+          "requirement": "석사 이상 학위",
+          "tags": [
+            "degree"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "가상대학교 전자공학과 석사 졸업 (2022.02)",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r5_a",
+          "requirement": "Java·Spring Boot 기반 서버 개발 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Spring Boot와 JPA로 배송 추적 API를 개발했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r5_a",
+          "requirement": "RDBMS 쿼리 튜닝 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "MySQL 슬로우 쿼리를 분석해 인덱스를 추가했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r5_a",
+          "requirement": "백엔드 개발 경력 3년 이상",
+          "tags": [
+            "years"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r5_a",
+          "requirement": "Kotlin 사용 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "insufficient",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r5_a",
+          "requirement": "캐시 시스템 활용 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Redis 캐시를 도입해 조회 API 응답 시간을 절반으로 줄였습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r5_a",
+          "requirement": "Kafka 등 메시지 큐 사용 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r5_b",
+          "requirement": "Python 기반 서버 개발 경험",
+          "tags": [
+            "absent",
+            "tempting_quote"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r5_b",
+          "requirement": "Git 사용 능력",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "insufficient",
+          "quote": "Git",
+          "quote_exists": true,
+          "outcome": "missed_met",
+          "notes": [
+            "의미 검증 실패로 충족 → 근거 부족: 인용문에 'Git'만 언급되어 있어, Git 사용 능력에 대한 구체적인 기술·경험을 명시적으로 표현하지 않음"
+          ]
+        },
+        {
+          "case_id": "r5_b",
+          "requirement": "Spring Boot 사용 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "insufficient",
+          "quote": "Spring Boot",
+          "quote_exists": true,
+          "outcome": "missed_met",
+          "notes": [
+            "의미 검증 실패로 충족 → 근거 부족: 인용문에 'Spring Boot'만 언급되어 있어, Spring Boot 사용 경험에 대한 구체적인 기술·경험을 명시적으로 표현하지 않음"
+          ]
+        },
+        {
+          "case_id": "r5_b",
+          "requirement": "MongoDB 사용 경험",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "insufficient",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r5_b",
+          "requirement": "소프트웨어 관련 전공 학사 이상",
+          "tags": [
+            "degree"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "가상대학교 소프트웨어학과 학사 졸업 (2023.02)",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r6_a",
+          "requirement": "AWS 운영 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Terraform으로 AWS 인프라(VPC, ECS, RDS)를 코드로 관리했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r6_a",
+          "requirement": "IaC 도구(Terraform 등) 사용 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Terraform으로 AWS 인프라(VPC, ECS, RDS)를 코드로 관리했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r6_a",
+          "requirement": "배포 자동화 파이프라인 구축 경험",
+          "tags": [
+            "paraphrase"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "GitHub Actions로 ECS 무중단 배포 파이프라인을 만들었습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r6_a",
+          "requirement": "Kubernetes 운영 경험",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r6_a",
+          "requirement": "GCP 사용 경험",
+          "tags": [
+            "adjacent_trap"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r6_a",
+          "requirement": "클라우드 관련 경력 3년 이상",
+          "tags": [
+            "years"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "클라우드 엔지니어 · 가상게임즈 · 2021.04–2025.04 (4년)",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r6_a",
+          "requirement": "AWS 자격증 보유",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "AWS Certified Solutions Architect – Associate",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r6_b",
+          "requirement": "학사 이상 학위",
+          "tags": [
+            "no_info",
+            "degree"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r6_b",
+          "requirement": "Linux 서버 사용 능력",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Linux, Bash",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r6_b",
+          "requirement": "모니터링 체계 구축 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "CloudWatch 경보와 대시보드로 서비스 모니터링 체계를 구축했습니다.",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        },
+        {
+          "case_id": "r6_b",
+          "requirement": "Ansible 사용 경험",
+          "tags": [
+            "absent"
+          ],
+          "gold": "not_met",
+          "verdict": "not_met",
+          "quote": "",
+          "quote_exists": false,
+          "outcome": "correct_not",
+          "notes": []
+        },
+        {
+          "case_id": "r6_b",
+          "requirement": "Docker 사용 경험",
+          "tags": [
+            "direct"
+          ],
+          "gold": "met",
+          "verdict": "met",
+          "quote": "Docker",
+          "quote_exists": true,
+          "outcome": "correct_met",
+          "notes": []
+        }
+      ]
+    }
+  ]
+}
